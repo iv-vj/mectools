@@ -176,7 +176,14 @@
     acts.hidden = false;
   }
 
-  pick.addEventListener('change', function () { run(pick.files); pick.value = ''; });
+  // 必须先把文件快照成数组：pick.files 是「活」的 FileList，
+  // pick.value='' 会当场把它清空，而 run() 要 await 之后才读它 —— 那样就读到 0 个文件。
+  // 手机上只能走这条路径（没有拖放），所以这个顺序是致命的。
+  pick.addEventListener('change', function () {
+    var fs = Array.prototype.slice.call(pick.files);
+    pick.value = '';
+    run(fs);
+  });
   drop.addEventListener('click', function (e) { if (e.target.tagName !== 'INPUT') pick.click(); });
   ['dragenter', 'dragover'].forEach(function (ev) {
     drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('over'); });
