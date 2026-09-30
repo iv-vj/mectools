@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>渐开线齿轮几何参数计算器 · 机械工具箱</title>
+<meta name="description" content="在线计算渐开线直齿圆柱齿轮的分度圆、齿顶圆、齿根圆、基圆直径、齿顶厚、端面重合度，自动校验根切与齿顶变尖。">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/gear.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="渐开线齿轮几何参数计算器 · 机械工具箱">
+<meta property="og:description" content="在线计算渐开线直齿圆柱齿轮的分度圆、齿顶圆、齿根圆、基圆直径、齿顶厚、端面重合度，自动校验根切与齿顶变尖。">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/gear.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1>渐开线齿轮几何参数计算器</h1>
+  <p class="sub">标准直齿圆柱齿轮（外啮合，标准齿，x=0）。输入参数后实时计算，无需点击按钮。</p>
+
+  <div class="panel">
+    <div class="row">
+      <div class="field"><label>模数 m (mm)</label><input type="number" id="m" value="3" step="0.25" min="0.1"></div>
+      <div class="field"><label>小齿轮齿数 z₁</label><input type="number" id="z1" value="20" step="1" min="3"></div>
+      <div class="field"><label>大齿轮齿数 z₂</label><input type="number" id="z2" value="60" step="1" min="3"></div>
+      <div class="field"><label>压力角 α (°)</label><input type="number" id="alp" value="20" step="1" min="10" max="30"></div>
+      <div class="field"><label>齿宽 b (mm，可选)</label><input type="number" id="b" value="30" step="1" min="0"></div>
+    </div>
+  </div>
+
+  <div id="msgs"></div>
+
+  <div class="panel">
+    <h2>几何尺寸</h2>
+    <table id="tbl1"></table>
+  </div>
+
+  <div class="panel">
+    <h2>啮合性能</h2>
+    <table id="tbl2"></table>
+  </div>
+
+  <div class="panel">
+    <h2>齿形预览（小齿轮 z₁，1:1 比例示意）</h2>
+    <div id="svgbox"></div>
+  </div>
+
+  <h2>公式说明</h2>
+  <div class="panel">
+    <p style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)">
+      d = mz&nbsp;&nbsp;|&nbsp;&nbsp;d<sub>b</sub> = d·cosα&nbsp;&nbsp;|&nbsp;&nbsp;d<sub>a</sub> = d + 2h<sub>a</sub>*m&nbsp;&nbsp;|&nbsp;&nbsp;d<sub>f</sub> = d − 2(h<sub>a</sub>*+c*)m<br>
+      p = πm&nbsp;&nbsp;|&nbsp;&nbsp;s = πm/2&nbsp;&nbsp;|&nbsp;&nbsp;a = m(z₁+z₂)/2&nbsp;&nbsp;|&nbsp;&nbsp;i = z₂/z₁<br>
+      inv α = tanα − α<br>
+      s<sub>a</sub> = d<sub>a</sub>·[ s/d + inv α − inv α<sub>a</sub> ]&nbsp;&nbsp;（齿顶厚，防变尖）<br>
+      ε<sub>α</sub> = [ z₁(tanα<sub>a1</sub> − tanα) + z₂(tanα<sub>a2</sub> − tanα) ] / 2π&nbsp;&nbsp;（必须 &gt; 1）<br>
+      z<sub>min</sub> = 2h<sub>a</sub>* / sin²α&nbsp;&nbsp;（20° 标准齿为 17）
+    </p>
+  </div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script src="lib.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const f = (x, n = 3) => (Math.abs(x) < 1e-9 ? 0 : x).toFixed(n);
+
+function row(k, v, u, hi) {
+  return '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+         '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+}
+
+function calc() {
+  const o = { m: $('m').value, z1: $('z1').value, z2: $('z2').value, alphaDeg: $('alp').value };
+  const r = MG.gearPair(o);
+  const msgs = $('msgs');
+  if (r.error) {
+    msgs.innerHTML = '<div class="msg err">' + r.error + '</div>';
+    $('tbl1').innerHTML = $('tbl2').innerHTML = '';
+    $('svgbox').innerHTML = '';
+    return;
+  }
+
+  // ---------- 提示 ----------
+  let h = '';
+  if (r.eps > 1.2) h += '<div class="msg ok">端面重合度 ε<sub>α</sub> = ' + f(r.eps, 3) + '，传动平稳性良好（&gt;1.2）。</div>';
+  else if (r.eps > 1.0) h += '<div class="msg warn">端面重合度 ε<sub>α</sub> = ' + f(r.eps, 3) + '，仅略大于 1，传动连续性勉强满足，建议增大齿数或调整压力角。</div>';
+  else h += '<div class="msg err">端面重合度 ε<sub>α</sub> = ' + f(r.eps, 3) + ' ≤ 1，<b>传动不连续</b>，啮合会中断，必须重新设计。</div>';
+  if (r.undercut1) h += '<div class="msg err">z₁ = ' + r.z1 + ' &lt; z<sub>min</sub> = ' + f(r.zmin, 2) + '，小齿轮会发生<b>根切</b>，须采用变位齿轮或增大齿数。</div>';
+  if (r.undercut2) h += '<div class="msg err">z₂ = ' + r.z2 + ' &lt; z<sub>min</sub> = ' + f(r.zmin, 2) + '，大齿轮会发生<b>根切</b>。</div>';
+  if (r.sharp1) h += '<div class="msg warn">小齿轮齿顶厚 s<sub>a1</sub> = ' + f(r.sa1) + ' mm &lt; 0.25m，齿顶过尖，承载能力差。</div>';
+  if (r.sharp2) h += '<div class="msg warn">大齿轮齿顶厚 s<sub>a2</sub> = ' + f(r.sa2) + ' mm &lt; 0.25m，齿顶过尖。</div>';
+  if (!r.undercut1 && !r.undercut2 && !r.sharp1 && !r.sharp2 && r.eps > 1.2)
+    h += '<div class="msg ok">未发现根切或齿顶变尖问题，几何参数合理。</div>';
+  msgs.innerHTML = h;
+
+  // ---------- 几何尺寸 ----------
+  const b = +$('b').value;
+  let t = '';
+  t += row('分度圆直径 d₁ / d₂', f(r.d1) + ' / ' + f(r.d2), 'mm', true);
+  t += row('齿顶圆直径 d<sub>a1</sub> / d<sub>a2</sub>', f(r.da1) + ' / ' + f(r.da2), 'mm', true);
+  t += row('齿根圆直径 d<sub>f1</sub> / d<sub>f2</sub>', f(r.df1) + ' / ' + f(r.df2), 'mm');
+  t += row('基圆直径 d<sub>b1</sub> / d<sub>b2</sub>', f(r.db1) + ' / ' + f(r.db2), 'mm');
+  t += row('齿顶高 h<sub>a</sub>', f(r.ha1), 'mm');
+  t += row('齿根高 h<sub>f</sub>', f(r.hf1), 'mm');
+  t += row('全齿高 h', f(r.h1), 'mm');
+  t += row('齿距 p', f(r.p), 'mm');
+  t += row('分度圆齿厚 s', f(r.s), 'mm');
+  t += row('标准中心距 a', f(r.a), 'mm', true);
+  t += row('传动比 i = z₂/z₁', f(r.i, 4), '—', true);
+  if (b > 0) {
+    t += row('齿宽 b₁ / b₂（建议 b₂=b, b₁=b+5）', f(b) + ' / ' + f(b + 5), 'mm');
+    t += row('齿宽系数 φ<sub>d</sub> = b/d₁', f(b / r.d1, 3), '—');
+  }
+  $('tbl1').innerHTML = t;
+
+  // ---------- 啮合性能 ----------
+  let t2 = '';
+  t2 += row('齿顶圆压力角 α<sub>a1</sub> / α<sub>a2</sub>', f(r.aa1, 3) + '° / ' + f(r.aa2, 3) + '°', '°');
+  t2 += row('端面重合度 ε<sub>α</sub>', f(r.eps, 4), '—', true);
+  t2 += row('齿顶厚 s<sub>a1</sub> / s<sub>a2</sub>', f(r.sa1) + ' / ' + f(r.sa2), 'mm', true);
+  t2 += row('齿顶厚下限 0.25m', f(0.25 * r.m), 'mm');
+  t2 += row('不根切最少齿数 z<sub>min</sub>', f(r.zmin, 2), '—');
+  t2 += row('小齿轮每转啮合齿数（近似）', f(r.eps, 2), '对');
+  $('tbl2').innerHTML = t2;
+
+  // ---------- 齿形预览 ----------
+  drawGear(o);
+}
+
+/* 齿形预览：绘制逻辑已抽到 lib.js 的 MG.gearSvg(o)（纯字符串 SVG），
+   本页与离线单文件版共用同一实现，避免两处维护同一段几何代码。 */
+function drawGear(o) {
+  $('svgbox').innerHTML = MG.gearSvg ? MG.gearSvg(o) : '';
+}
+
+['m', 'z1', 'z2', 'alp', 'b'].forEach(id => $(id).addEventListener('input', calc));
+calc();
+</script>
+</body>
+</html>

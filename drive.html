@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>传动比分配 · V带传动 · 轴强度校核 · 轴承寿命 · 机械工具箱</title>
+<meta name="description" content="在线机械设计计算：两级减速器传动比分配、V带传动设计、轴弯扭合成强度校核、滚动轴承额定寿命 L10。免注册。">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/drive.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="传动比分配 · V带传动 · 轴强度校核 · 轴承寿命 · 机械工具箱">
+<meta property="og:description" content="在线机械设计计算：两级减速器传动比分配、V带传动设计、轴弯扭合成强度校核、滚动轴承额定寿命 L10。免注册。">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/drive.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1>传动与轴系计算</h1>
+  <p class="sub">四个常用计算合在一页。输入即算，全部在浏览器本地完成。</p>
+
+  <!-- ============ 1 传动比分配 ============ -->
+  <h2 id="ratio">① 传动比分配（展开式圆柱齿轮减速器）</h2>
+  <div class="panel">
+    <div class="row">
+      <div class="field"><label>总传动比 i<sub>总</sub></label><input type="number" id="rt_i" value="16" step="0.1" min="1.01"></div>
+      <div class="field"><label>传动级数</label>
+        <select id="rt_k"><option value="2">两级</option><option value="3">三级</option></select>
+      </div>
+    </div>
+    <p style="color:var(--dim);font-size:12.5px;margin:12px 0 0">
+      规则：展开式两级取 i₁ ≈ 1.35·i₂（高速级略大，使两级大齿轮浸油深度接近）；三级取 i₁ ≈ i₂ ≈ 1.4·i₃。
+    </p>
+  </div>
+  <div class="panel"><table id="rt_out"></table></div>
+
+  <!-- ============ 2 V带 ============ -->
+  <h2 id="belt">② V 带传动</h2>
+  <div class="panel">
+    <div class="row">
+      <div class="field"><label>传递功率 P (kW)</label><input type="number" id="bv_P" value="4" step="0.1" min="0.01"></div>
+      <div class="field"><label>小轮转速 n₁ (r/min)</label><input type="number" id="bv_n" value="1440" step="10" min="1"></div>
+      <div class="field"><label>小轮基准直径 d<sub>d1</sub> (mm)</label><input type="number" id="bv_d" value="100" step="5" min="1"></div>
+      <div class="field"><label>传动比 i</label><input type="number" id="bv_i" value="3" step="0.1" min="0.1"></div>
+      <div class="field"><label>工况系数 K<sub>A</sub></label><input type="number" id="bv_ka" value="1.2" step="0.1" min="1"></div>
+    </div>
+  </div>
+  <div id="bv_msg"></div>
+  <div class="panel"><table id="bv_out"></table></div>
+
+  <!-- ============ 3 轴 ============ -->
+  <h2 id="shaft">③ 轴 · 弯扭合成强度校核（第三强度理论）</h2>
+  <div class="panel">
+    <div class="row">
+      <div class="field"><label>危险截面弯矩 M (N·m)</label><input type="number" id="sh_M" value="180" step="1" min="0"></div>
+      <div class="field"><label>扭矩 T (N·m)</label><input type="number" id="sh_T" value="250" step="1" min="0"></div>
+      <div class="field"><label>轴径 d (mm)</label><input type="number" id="sh_d" value="35" step="1" min="1"></div>
+      <div class="field"><label>许用应力 [σ] (MPa)</label><input type="number" id="sh_s" value="60" step="5" min="1"></div>
+      <div class="field"><label>折合系数 α</label>
+        <select id="sh_a">
+          <option value="0.3">0.3（转矩脉动，如带传动输入轴）</option>
+          <option value="0.6" selected>0.6（转矩变化，一般减速器轴）</option>
+          <option value="1">1.0（转矩频繁正反转）</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div id="sh_msg"></div>
+  <div class="panel"><table id="sh_out"></table></div>
+
+  <!-- ============ 4 轴承 ============ -->
+  <h2 id="bearing">④ 滚动轴承基本额定寿命 L₁₀</h2>
+  <div class="panel">
+    <div class="row">
+      <div class="field"><label>基本额定动载荷 C (kN)</label><input type="number" id="br_C" value="31.5" step="0.1" min="0.01"></div>
+      <div class="field"><label>当量动载荷 P (kN)</label><input type="number" id="br_P" value="4.2" step="0.1" min="0.01"></div>
+      <div class="field"><label>转速 n (r/min)</label><input type="number" id="br_n" value="420" step="10" min="1"></div>
+      <div class="field"><label>寿命指数 ε</label>
+        <select id="br_e"><option value="3">3（球轴承）</option><option value="3.3333">10/3（滚子轴承）</option></select>
+      </div>
+      <div class="field"><label>目标寿命要求 (h)</label><input type="number" id="br_need" value="20000" step="1000" min="1"></div>
+    </div>
+  </div>
+  <div id="br_msg"></div>
+  <div class="panel"><table id="br_out"></table></div>
+
+  <h2>免责说明</h2>
+  <div class="panel">
+    <p style="color:var(--dim);font-size:13px;margin:0">
+      以上为常用简化算法，用于方案估算与快速校核。实际设计须结合载荷谱、应力集中系数、尺寸系数、
+      表面质量系数、安全系数，以及现行国标与行业标准取值，并由主管工程师签署。
+    </p>
+  </div>
+<h2>本页四个计算也有各自独立的页面</h2>
+<div class="panel" style="display:flex;flex-wrap:wrap;gap:10px"><a class="card" style="flex:1 1 200px" href="t-ratio.html"><b>传动比分配</b><small>独立页</small></a><a class="card" style="flex:1 1 200px" href="t-belt.html"><b>V 带传动</b><small>独立页</small></a><a class="card" style="flex:1 1 200px" href="t-shaft.html"><b>轴弯扭合成</b><small>独立页</small></a><a class="card" style="flex:1 1 200px" href="t-bearing.html"><b>轴承寿命</b><small>独立页</small></a></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script src="lib.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const f = (x, n = 3) => (Math.abs(x) < 1e-9 ? 0 : x).toFixed(n);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+const bind = (ids, fn) => { ids.forEach(id => $(id).addEventListener('input', fn)); fn(); };
+
+/* -------- ① 传动比分配 -------- */
+function ratio() {
+  const i = +$('rt_i').value, k = +$('rt_k').value;
+  if (!(i > 1)) { $('rt_out').innerHTML = '<tr><td>总传动比需大于 1</td></tr>'; return; }
+  let ls = [], note = '';
+  if (k === 2) {
+    const i2 = Math.sqrt(i / 1.35), i1 = i / i2;
+    ls = [['高速级 i₁', i1], ['低速级 i₂', i2]];
+    note = '两级比 i₁/i₂ = ' + f(i1 / i2, 3) + '（推荐 1.3~1.4）';
+  } else {
+    const i3 = Math.cbrt(i / 1.96), i2 = 1.4 * i3, i1 = i / (i2 * i3);
+    ls = [['高速级 i₁', i1], ['中间级 i₂', i2], ['低速级 i₃', i3]];
+    note = 'i₁/i₂ = ' + f(i1 / i2, 3) + '，i₂/i₃ = ' + f(i2 / i3, 3);
+  }
+  let t = '';
+  ls.forEach(([n, v], idx) => { t += row(n, f(v, 4), '—', idx === 0); });
+  t += row('校验：各级相乘', f(ls.reduce((a, b) => a * b[1], 1), 4), '—');
+  t += row('分配说明', note, '');
+  $('rt_out').innerHTML = t;
+}
+
+/* -------- ② V 带 -------- */
+function belt() {
+  const r = MG.beltDrive({
+    power: $('bv_P').value, n1: $('bv_n').value, dd1: $('bv_d').value,
+    ratio: $('bv_i').value, ka: $('bv_ka').value
+  });
+  if (r.error) { $('bv_out').innerHTML = '<tr><td>' + r.error + '</td></tr>'; $('bv_msg').innerHTML = ''; return; }
+  let h = '';
+  if (r.warn_v) h += '<div class="msg warn">' + r.warn_v + '</div>';
+  if (r.warn_a) h += '<div class="msg warn">' + r.warn_a + '</div>';
+  if (!r.warn_v && !r.warn_a) h = '<div class="msg ok">带速与包角均在设计推荐范围内。</div>';
+  $('bv_msg').innerHTML = h;
+
+  let t = '';
+  t += row('计算功率 P<sub>ca</sub> = K<sub>A</sub>·P', f(r.Pd), 'kW', true);
+  t += row('大轮基准直径 d<sub>d2</sub>（取整）', f(r.dd2, 0), 'mm', true);
+  t += row('带速 v = πd<sub>d1</sub>n₁/60000', f(r.v), 'm/s', true);
+  t += row('中心距初选范围', f(r.a0min) + ' ~ ' + f(r.a0max), 'mm');
+  t += row('初定中心距 a₀', f(r.a0), 'mm');
+  t += row('所需基准带长 L<sub>d0</sub>', f(r.Ld0), 'mm');
+  t += row('小轮包角 α₁ = 180°−(d<sub>d2</sub>−d<sub>d1</sub>)/a·57.3°', f(r.alpha1), '°', true);
+  t += row('推荐带速范围', '5 ~ 25', 'm/s');
+  t += row('包角下限', '120', '°');
+  $('bv_out').innerHTML = t;
+}
+
+/* -------- ③ 轴 -------- */
+function shaft() {
+  const r = MG.shaftCheck({
+    M: +$('sh_M').value * 1000, T: +$('sh_T').value * 1000,
+    d: $('sh_d').value, sigma: $('sh_s').value, alpha: $('sh_a').value
+  });
+  if (r.error) { $('sh_out').innerHTML = '<tr><td>' + r.error + '</td></tr>'; $('sh_msg').innerHTML = ''; return; }
+  $('sh_msg').innerHTML = r.pass
+    ? '<div class="msg ok">σ<sub>ca</sub> = ' + f(r.sCa) + ' MPa ≤ [σ] = ' + $('sh_s').value + ' MPa，<b>强度合格</b>，裕度 ' + f(r.n, 2) + ' 倍。</div>'
+    : '<div class="msg err">σ<sub>ca</sub> = ' + f(r.sCa) + ' MPa &gt; [σ] = ' + $('sh_s').value + ' MPa，<b>强度不足</b>，轴径至少需 ' + f(r.dmin, 1) + ' mm。</div>';
+
+  let t = '';
+  t += row('抗弯截面系数 W = πd³/32', f(r.W, 1), 'mm³');
+  t += row('抗扭截面系数 W<sub>T</sub> = πd³/16', f(r.WT, 1), 'mm³');
+  t += row('当量弯矩 M<sub>ca</sub> = √(M² + (αT)²)', f(r.Mca / 1000, 2), 'N·m', true);
+  t += row('弯曲应力 σ<sub>b</sub> = M/W', f(r.sBend), 'MPa');
+  t += row('扭转应力 τ<sub>T</sub> = T/W<sub>T</sub>', f(r.sTor), 'MPa');
+  t += row('计算应力 σ<sub>ca</sub> = M<sub>ca</sub>/W', f(r.sCa), 'MPa', true);
+  t += row('安全裕度 [σ]/σ<sub>ca</sub>', f(r.n, 3), '—', true);
+  t += row('按 [σ] 反算最小轴径 d<sub>min</sub>', f(r.dmin, 2), 'mm', true);
+  $('sh_out').innerHTML = t;
+}
+
+/* -------- ④ 轴承 -------- */
+function bearing() {
+  const r = MG.bearingLife({
+    C: $('br_C').value, P: $('br_P').value, n: $('br_n').value,
+    epsilon: $('br_e').value, need: $('br_need').value
+  });
+  if (r.error) { $('br_out').innerHTML = '<tr><td>' + r.error + '</td></tr>'; $('br_msg').innerHTML = ''; return; }
+  $('br_msg').innerHTML = r.pass
+    ? '<div class="msg ok">L₁₀ = ' + f(r.hours, 0) + ' h ≥ 目标 ' + $('br_need').value + ' h，<b>寿命合格</b>。</div>'
+    : '<div class="msg err">L₁₀ = ' + f(r.hours, 0) + ' h &lt; 目标 ' + $('br_need').value + ' h，<b>寿命不足</b>，需选更大 C 的轴承或降低当量动载荷。</div>';
+
+  let t = '';
+  t += row('载荷比 C/P', f(r.ratio, 3), '—', true);
+  t += row('寿命系数 (C/P)<sup>ε</sup>', f(r.L10m, 1), '百万转', true);
+  t += row('额定寿命 L₁₀', f(r.hours, 0), 'h', true);
+  t += row('折算年限（按 8 h/天、250 天/年）', f(r.hours / (8 * 250), 2), '年');
+  $('br_out').innerHTML = t;
+}
+
+bind(['rt_i', 'rt_k'], ratio);
+bind(['bv_P', 'bv_n', 'bv_d', 'bv_i', 'bv_ka'], belt);
+bind(['sh_M', 'sh_T', 'sh_d', 'sh_s', 'sh_a'], shaft);
+bind(['br_C', 'br_P', 'br_n', 'br_e', 'br_need'], bearing);
+</script>
+</body>
+</html>

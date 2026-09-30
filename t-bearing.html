@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>滚动轴承基本额定寿命 L₁₀ - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="基本额定寿命 (C/P)^ε · 10⁶/(60n) 小时，可设目标寿命自动判定是否合格。。免费在线计算，免注册，浏览器本地完成，数据不上传。滚动轴承基本额定寿命 L₁₀">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-bearing.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="滚动轴承基本额定寿命 L₁₀ - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="基本额定寿命 (C/P)^ε · 10⁶/(60n) 小时，可设目标寿命自动判定是否合格。。免费在线计算，免注册，浏览器本地完成，数据不上传。滚动轴承基本额定寿命 L₁₀">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-bearing.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "滚动轴承基本额定寿命 L₁₀", "url": "https://iv-vj.github.io/mectools/t-bearing.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "基本额定寿命 (C/P)^ε · 10⁶/(60n) 小时，可设目标寿命自动判定是否合格。。免费在线计算，免注册，浏览器本地完成，数据不上传。滚动轴承基本额定寿命 L₁₀", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">滚动轴承基本额定寿命 L₁₀</h1>
+  <p class="sub" id="desc">基本额定寿命 (C/P)^ε · 10⁶/(60n) 小时，可设目标寿命自动判定是否合格。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：基本额定动载荷 C、当量动载荷 P、转速 n、寿命指数 ε、目标寿命要求。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg err">L₁₀ = 16741 h &lt; 目标 20000 h —— <b>寿命不足</b>，需选更大 C 的轴承或降低当量动载荷。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">载荷比 C/P</th><td class="v">7.500</td><td class="u">—</td></tr><tr><th style="width:auto">寿命系数 (C/P)<sup>ε</sup></th><td class="v">421.9</td><td class="u">百万转</td></tr><tr><th style="width:auto">额定寿命 L₁₀</th><td class="v">16741</td><td class="u">h</td></tr><tr><th style="width:auto">折算年限（按 8 h/天、250 天/年）</th><td class="v">8.37</td><td class="u">年</td></tr><tr><th style="width:auto">目标寿命要求</th><td class="v">20000</td><td class="u">h</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)">L<sub>10</sub> = (C/P)<sup>ε</sup> · 10<sup>6</sup> / (60n) &nbsp;小时&nbsp;&nbsp;|&nbsp;&nbsp;寿命指数 ε：球轴承 3，滚子轴承 10/3。<br><b>注意</b>：这是<b>基本额定寿命</b>，可靠度 90%。实际选型还要引入温度系数 f<sub>t</sub>、载荷系数 f<sub>p</sub>，以及对可靠度/材料/润滑修正的 a₁·a₂·a₃（或按 GB/T 6391 修正寿命公式）；高温、冲击、污染工况下实际寿命会明显低于此值。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="bearing";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

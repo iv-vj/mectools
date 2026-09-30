@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iv-vj.github.io/mectools/sitemap.xml

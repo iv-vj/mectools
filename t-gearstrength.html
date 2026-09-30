@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>齿轮强度校核（接触 + 弯曲） - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="齿面接触应力 σH 与齿根弯曲应力 σF 校核。重合度系数与齿形系数均由齿数自动算出，也可切换为手动取值。。免费在线计算，免注册，浏览器本地完成，数据不上传。齿轮强度校核（接触 + 弯曲）">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-gearstrength.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="齿轮强度校核（接触 + 弯曲） - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="齿面接触应力 σH 与齿根弯曲应力 σF 校核。重合度系数与齿形系数均由齿数自动算出，也可切换为手动取值。。免费在线计算，免注册，浏览器本地完成，数据不上传。齿轮强度校核（接触 + 弯曲）">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-gearstrength.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "齿轮强度校核（接触 + 弯曲）", "url": "https://iv-vj.github.io/mectools/t-gearstrength.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "齿面接触应力 σH 与齿根弯曲应力 σF 校核。重合度系数与齿形系数均由齿数自动算出，也可切换为手动取值。。免费在线计算，免注册，浏览器本地完成，数据不上传。齿轮强度校核（接触 + 弯曲）", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">齿轮强度校核（接触 + 弯曲）</h1>
+  <p class="sub" id="desc">齿面接触应力 σH 与齿根弯曲应力 σF 校核。重合度系数与齿形系数均由齿数自动算出，也可切换为手动取值。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：小齿轮扭矩 T₁、模数 m、小齿轮齿数 z₁、大齿轮齿数 z₂、齿宽 b、载荷系数 K、弹性系数 Z&lt;sub&gt;E&lt;/sub&gt;（钢-钢 189.8）、节点区域系数 Z&lt;sub&gt;H&lt;/sub&gt;（标准直齿 2.5）、接触疲劳极限 σ&lt;sub&gt;Hlim&lt;/sub&gt;、接触强度安全系数 S&lt;sub&gt;H&lt;/sub&gt;、齿形系数取值方式、齿形系数 Y&lt;sub&gt;Fa&lt;/sub&gt;（仅手动方式生效）、应力修正系数 Y&lt;sub&gt;Sa&lt;/sub&gt;（仅手动方式生效）、弯曲疲劳极限 σ&lt;sub&gt;FE&lt;/sub&gt;、弯曲强度安全系数 S&lt;sub&gt;F&lt;/sub&gt;。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg ok">齿面接触应力 σ<sub>H</sub> = 881.4 MPa ≤ [σ<sub>H</sub>] = 1200.0 MPa —— <b>接触强度合格</b>，裕度 1.36 倍。</div><div class="msg ok">齿根弯曲应力 σ<sub>F</sub> = 202.2 MPa ≤ [σ<sub>F</sub>] = 428.6 MPa —— <b>弯曲强度合格</b>，裕度 2.12 倍。</div><div class="msg ok">两项都满足时才合格。若要提高承载能力：当前按本组参数已合格，可反查下面的允许扭矩看还有多少余量。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">分度圆直径 d₁ / d₂</th><td class="v">60.00 / 180.00</td><td class="u">mm</td></tr><tr><th style="width:auto">齿数比 u = z₂/z₁</th><td class="v">3.0000</td><td class="u">—</td></tr><tr><th style="width:auto">端面重合度 ε<sub>α</sub>（标准直齿）</th><td class="v">1.6708</td><td class="u">—</td></tr><tr><th style="width:auto">重合度系数 Z<sub>ε</sub> = √((4−ε<sub>α</sub>)/3)</th><td class="v">0.8811</td><td class="u">—</td></tr><tr><th style="width:auto">重合度系数 Y<sub>ε</sub> = 0.25 + 0.75/ε<sub>α</sub></th><td class="v">0.6989</td><td class="u">—</td></tr><tr><th style="width:auto">齿形系数 Y<sub>Fa</sub>（按 z₁ 查表插值）</th><td class="v">2.800</td><td class="u">—</td></tr><tr><th style="width:auto">应力修正系数 Y<sub>Sa</sub>（按 z₁ 查表插值）</th><td class="v">1.550</td><td class="u">—</td></tr><tr><th style="width:auto">乘积 Y<sub>Fa</sub>·Y<sub>Sa</sub></th><td class="v">4.3400</td><td class="u">—</td></tr><tr><th style="width:auto">齿宽系数 φ<sub>d</sub> = b/d₁</th><td class="v">0.500</td><td class="u">—</td></tr><tr><th style="width:auto">齿面接触应力 σ<sub>H</sub></th><td class="v">881.4</td><td class="u">MPa</td></tr><tr><th style="width:auto">许用接触应力 [σ<sub>H</sub>] = σ<sub>Hlim</sub>/S<sub>H</sub></th><td class="v">1200.0</td><td class="u">MPa</td></tr><tr><th style="width:auto">接触强度安全裕度</th><td class="v">1.361</td><td class="u">—</td></tr><tr><th style="width:auto">齿根弯曲应力 σ<sub>F</sub></th><td class="v">202.2</td><td class="u">MPa</td></tr><tr><th style="width:auto">许用弯曲应力 [σ<sub>F</sub>] = σ<sub>FE</sub>/S<sub>F</sub></th><td class="v">428.6</td><td class="u">MPa</td></tr><tr><th style="width:auto">弯曲强度安全裕度</th><td class="v">2.119</td><td class="u">—</td></tr><tr><th style="width:auto">按接触强度允许的最大 T₁</th><td class="v">222.41</td><td class="u">N·m</td></tr><tr><th style="width:auto">按弯曲强度允许的最大 T₁</th><td class="v">254.33</td><td class="u">N·m</td></tr><tr><th style="width:auto">由接触强度反算所需齿宽 b</th><td class="v">16.19</td><td class="u">mm</td></tr><tr><th style="width:auto">由弯曲强度反算所需模数 m</th><td class="v">2.061</td><td class="u">mm</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)"><b>接触强度</b> σ<sub>H</sub> = Z<sub>E</sub>·Z<sub>H</sub>·Z<sub>ε</sub>·√( 2K·T₁·(u+1) / (b·d₁²·u) )&nbsp;&nbsp;≤ [σ<sub>H</sub>] = σ<sub>Hlim</sub>/S<sub>H</sub><br><b>重合度系数</b> Z<sub>ε</sub> = √( (4 − ε<sub>α</sub>) / 3 )，Z<sub>ε</sub> 与 ε<sub>α</sub> 由本页按标准直齿轮几何自动求得。<br><b>弯曲强度</b> σ<sub>F</sub> = 2K·T₁·Y<sub>Fa</sub>·Y<sub>Sa</sub>·Y<sub>ε</sub> / (b·m²·z₁)&nbsp;&nbsp;≤ [σ<sub>F</sub>] = σ<sub>FE</sub>/S<sub>F</sub><br><b>重合度系数</b> Y<sub>ε</sub> = 0.25 + 0.75/ε<sub>α</sub><br><b>关于 Y<sub>Fa</sub>、Y<sub>Sa</sub></b>：本工具内置标准齿形系数表（z = 17…200 及 z→∞，α = 20°、齿根圆角 ρ = 0.38m），按 <b>z₁ 线性插值</b>自动取值，结果区会标出实际取用的数值。变位齿轮、内齿轮（表值 Y<sub>Fa</sub> ≈ Y<sub>Sa</sub> ≈ 2.65）或非标齿根圆角，请切到「手动输入」自行填值。z₁ &lt; 17 时按表中 z = 17 取值并给出根切提示 —— 根切会削弱齿根、使真实 Y<sub>Fa</sub> 偏大，故本页 σ<sub>F</sub> 偏乐观。<br>载荷系数 K = K<sub>A</sub>·K<sub>v</sub>·K<sub>β</sub>·K<sub>α</sub>，平稳载荷约 1.2~1.6，有冲击取 1.6~2.2。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="gearstrength";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

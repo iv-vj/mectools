@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>极限与配合计算 - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="按 GB/T 1800.1 查标准公差数值，再由孔与轴的基本偏差算出极限尺寸、间隙/过盈与配合性质。。免费在线计算，免注册，浏览器本地完成，数据不上传。极限与配合计算">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-tol.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="极限与配合计算 - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="按 GB/T 1800.1 查标准公差数值，再由孔与轴的基本偏差算出极限尺寸、间隙/过盈与配合性质。。免费在线计算，免注册，浏览器本地完成，数据不上传。极限与配合计算">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-tol.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "极限与配合计算", "url": "https://iv-vj.github.io/mectools/t-tol.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "按 GB/T 1800.1 查标准公差数值，再由孔与轴的基本偏差算出极限尺寸、间隙/过盈与配合性质。。免费在线计算，免注册，浏览器本地完成，数据不上传。极限与配合计算", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">极限与配合计算</h1>
+  <p class="sub" id="desc">按 GB/T 1800.1 查标准公差数值，再由孔与轴的基本偏差算出极限尺寸、间隙/过盈与配合性质。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：基本尺寸 L、孔公差等级、轴公差等级（与孔相同时不用改）、孔的基本偏差 EI（H 孔填 0）、轴的基本偏差 es（h 轴填 0）。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg ok">基本尺寸 30 mm 属于尺寸段 <b>18 &lt; L ≤ 30 mm</b>：孔 IT7 公差 IT = 21 μm，轴 IT7 公差 IT = 21 μm。</div><div class="msg ok">配合性质：<b>间隙配合</b>。最小间隙 X<sub>min</sub> = 0.0070 mm，始终有间隙。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">基本尺寸 L</th><td class="v">30.000</td><td class="u">mm</td></tr><tr><th style="width:auto">所在尺寸段</th><td class="v">18 &lt; L ≤ 30</td><td class="u">mm</td></tr><tr><th style="width:auto">孔公差等级</th><td class="v">IT7</td><td class="u"></td></tr><tr><th style="width:auto">轴公差等级</th><td class="v">IT7</td><td class="u"></td></tr><tr><th style="width:auto">孔标准公差 IT</th><td class="v">0.0210</td><td class="u">mm</td></tr><tr><th style="width:auto">孔标准公差 IT</th><td class="v">21</td><td class="u">μm</td></tr><tr><th style="width:auto">轴标准公差 IT</th><td class="v">0.0210</td><td class="u">mm</td></tr><tr><th style="width:auto">轴标准公差 IT</th><td class="v">21</td><td class="u">μm</td></tr><tr><th style="width:auto">孔 · 下偏差 EI</th><td class="v">+0.0000</td><td class="u">mm</td></tr><tr><th style="width:auto">孔 · 上偏差 ES = EI + IT<sub>孔</sub></th><td class="v">+0.0210</td><td class="u">mm</td></tr><tr><th style="width:auto">孔 · 最大极限尺寸</th><td class="v">30.0210</td><td class="u">mm</td></tr><tr><th style="width:auto">孔 · 最小极限尺寸</th><td class="v">30.0000</td><td class="u">mm</td></tr><tr><th style="width:auto">孔 · 公差带</th><td class="v">0.000 ~ 0.021</td><td class="u">mm</td></tr><tr><th style="width:auto">轴 · 上偏差 es</th><td class="v">−0.0070</td><td class="u">mm</td></tr><tr><th style="width:auto">轴 · 下偏差 ei = es − IT<sub>轴</sub></th><td class="v">−0.0280</td><td class="u">mm</td></tr><tr><th style="width:auto">轴 · 最大极限尺寸</th><td class="v">29.9930</td><td class="u">mm</td></tr><tr><th style="width:auto">轴 · 最小极限尺寸</th><td class="v">29.9720</td><td class="u">mm</td></tr><tr><th style="width:auto">轴 · 公差带</th><td class="v">-0.028 ~ -0.007</td><td class="u">mm</td></tr><tr><th style="width:auto">最大间隙 X<sub>max</sub> = ES − ei</th><td class="v">0.0490</td><td class="u">mm</td></tr><tr><th style="width:auto">最小间隙 X<sub>min</sub> = EI − es</th><td class="v">0.0070</td><td class="u">mm</td></tr><tr><th style="width:auto">配合公差 T<sub>f</sub> = X<sub>max</sub> − X<sub>min</sub></th><td class="v">0.0420</td><td class="u">mm</td></tr><tr><th style="width:auto">配合公差验算 IT<sub>孔</sub> + IT<sub>轴</sub></th><td class="v">0.0420</td><td class="u">mm</td></tr><tr><th style="width:auto">配合性质</th><td class="v">间隙配合</td><td class="u"></td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)"><b>标准公差数值</b>按 GB/T 1800.3 内置表格（基本尺寸 ≤500 mm、IT5~IT18），按基本尺寸所在尺寸段直接取值。<br><b>基本偏差</b>（a…zc、A…ZC）本工具<b>未内置</b> —— 那两张表按尺寸段列出，凭印象枚举容易出错。请查 GB/T 1800.1 表格把<b>孔的下偏差 EI</b> 与<b>轴的止偏差 es</b> 填进来，本页负责后面所有算术。<br><b>填法口诀</b>：基孔制（常用）时孔用 H，<b>EI = 0</b>；基轴制时轴用 h，<b>es = 0</b>；轴的基本偏差 es 对 a~h 为负值（间隙），对 k~zc 应是下偏差 ei（此时请把它换算成 es = ei + IT 再填）。<br><b>配合性质判定</b>：最大间隙 X<sub>max</sub> = ES − ei，最小间隙 X<sub>min</sub> = EI − es。X<sub>min</sub> ≥ 0 为间隙配合；X<sub>max</sub> ≤ 0 为过盈配合；两者之间为过渡配合。<br><b>优先配合推荐</b>：H7/f6、H8/f7（转动配合，如轴瓦）、H7/g6（精密滑动、定位）、H7/h6（可拆卸定位）、H7/js6、H7/k6（过渡，需定位又常拆）、H7/n6、H7/p6（过渡偏紧，少拆）、H7/r6、H7/s6、H7/u6（过盈，靠压力机或温差装配）。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="tol";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

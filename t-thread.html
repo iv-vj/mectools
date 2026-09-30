@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>螺纹基本尺寸与升角 - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="按 GB/T 196 / 197 计算米制普通螺纹的中径、小径、牙型高度，并算螺纹升角与自锁判断。。免费在线计算，免注册，浏览器本地完成，数据不上传。螺纹基本尺寸与升角">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-thread.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="螺纹基本尺寸与升角 - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="按 GB/T 196 / 197 计算米制普通螺纹的中径、小径、牙型高度，并算螺纹升角与自锁判断。。免费在线计算，免注册，浏览器本地完成，数据不上传。螺纹基本尺寸与升角">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-thread.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "螺纹基本尺寸与升角", "url": "https://iv-vj.github.io/mectools/t-thread.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "按 GB/T 196 / 197 计算米制普通螺纹的中径、小径、牙型高度，并算螺纹升角与自锁判断。。免费在线计算，免注册，浏览器本地完成，数据不上传。螺纹基本尺寸与升角", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">螺纹基本尺寸与升角</h1>
+  <p class="sub" id="desc">按 GB/T 196 / 197 计算米制普通螺纹的中径、小径、牙型高度，并算螺纹升角与自锁判断。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：公称直径 d、螺距方式、细牙螺距 P（细牙方式生效）、线数 n（单线螺纹为 1）、摩擦系数 μ（自锁判断用）。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg ok">M10 × 1.50（粗牙标准螺距）：中径 <b>d₂ = 9.026 mm</b>，小径 <b>d₁ = 8.376 mm</b>。</div><div class="msg ok">螺纹升角 ψ = 3.028°，当量摩擦角 ρ′ = 6.587°（μ = 0.10）—— <b>满足自锁条件</b> ψ ≤ ρ′。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">螺距 P</th><td class="v">1.500</td><td class="u">mm</td></tr><tr><th style="width:auto">导程 P<sub>h</sub> = n·P</th><td class="v">1.500</td><td class="u">mm</td></tr><tr><th style="width:auto">原始三角形高度 H = (√3/2)P</th><td class="v">1.2990</td><td class="u">mm</td></tr><tr><th style="width:auto">牙型工作高度 h₁ = 0.5413P</th><td class="v">0.8119</td><td class="u">mm</td></tr><tr><th style="width:auto">中径 d₂ = d − 0.6495P</th><td class="v">9.0257</td><td class="u">mm</td></tr><tr><th style="width:auto">小径 d₁ = d − 1.0825P</th><td class="v">8.3762</td><td class="u">mm</td></tr><tr><th style="width:auto">强度用小径 d₃ = d − 1.2269P</th><td class="v">8.1597</td><td class="u">mm</td></tr><tr><th style="width:auto">中径处牙宽（理论值 P/2）</th><td class="v">0.7500</td><td class="u">mm</td></tr><tr><th style="width:auto">螺纹升角 ψ</th><td class="v">3.0282</td><td class="u">°</td></tr><tr><th style="width:auto">当量摩擦角 ρ′ = arctan(μ/cos30°)</th><td class="v">6.5868</td><td class="u">°</td></tr><tr><th style="width:auto">自锁裕度 ρ′ / ψ</th><td class="v">2.175</td><td class="u">—</td></tr><tr><th style="width:auto">公称截面积 A = π d²/4</th><td class="v">78.54</td><td class="u">mm²</td></tr><tr><th style="width:auto">危险截面积 A₁ = π d₁²/4</th><td class="v">55.10</td><td class="u">mm²</td></tr><tr><th style="width:auto">强度计算截面积 A₃ = π d₃²/4</th><td class="v">52.29</td><td class="u">mm²</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)"><b>牙型基本尺寸</b>（GB/T 196，牙型角 60°）：原始三角形高度 H = (√3/2)·P；牙型工作高度 h₁ = 0.5413·P；中径 <b>d₂ = d − 0.6495·P</b>；小径 <b>d₁ = d − 1.0825·P</b>；强度计算用的小径 d₃ = d − 1.2269·P。<br><b>螺纹升角</b> ψ = arctan( P<sub>h</sub> / (π·d₂) )，P<sub>h</sub> = n·P 为导程（单线时 P<sub>h</sub> = P）。<br><b>自锁条件</b> ψ ≤ ρ′，ρ′ 为当量摩擦角，ρ′ = arctan( μ / cos(α/2) )，普通螺纹 α = 60° → cos30° = 0.866。钢-钢无润滑 μ ≈ 0.10~0.15，有润滑 ≈ 0.05~0.10 —— <b>μ 越小越难自锁</b>，所以判断时取偏小的 μ 才安全。<br>粗牙螺距为标准值；细牙螺距常见 0.25 / 0.35 / 0.5 / 0.75 / 1 / 1.25 / 1.5 / 2，同一直径可有多种细牙。<br><b>螺纹牙与螺栓的强度校核</b>请用「螺栓组联接强度校核」工具（那里按 d₁ 计算危险截面）。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="thread";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

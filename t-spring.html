@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>圆柱螺旋压缩弹簧 - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="旋绕比、曲度系数、刚度、变形量、切应力校核，以及自由高度与稳定性判断。。免费在线计算，免注册，浏览器本地完成，数据不上传。圆柱螺旋压缩弹簧">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-spring.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="圆柱螺旋压缩弹簧 - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="旋绕比、曲度系数、刚度、变形量、切应力校核，以及自由高度与稳定性判断。。免费在线计算，免注册，浏览器本地完成，数据不上传。圆柱螺旋压缩弹簧">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-spring.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "圆柱螺旋压缩弹簧", "url": "https://iv-vj.github.io/mectools/t-spring.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "旋绕比、曲度系数、刚度、变形量、切应力校核，以及自由高度与稳定性判断。。免费在线计算，免注册，浏览器本地完成，数据不上传。圆柱螺旋压缩弹簧", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">圆柱螺旋压缩弹簧</h1>
+  <p class="sub" id="desc">旋绕比、曲度系数、刚度、变形量、切应力校核，以及自由高度与稳定性判断。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：弹簧丝直径 d、弹簧中径 D、有效圈数 n、工作载荷 F、节距 t、切变模量 G、许用切应力 [τ]、端部结构。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg ok">工作切应力 τ = 370.4 MPa ≤ [τ] = 450 MPa —— <b>强度合格</b>，裕度 1.21 倍。</div><div class="msg ok">旋绕比 C = 6.25 位于推荐区间 4~16。</div><div class="msg ok">高径比 b = H₀/D = 3.12 ≤ 5.3（两端固定）稳定性满足。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">旋绕比 C = D/d</th><td class="v">6.25</td><td class="u">—</td></tr><tr><th style="width:auto">曲度系数 K</th><td class="v">1.241</td><td class="u">—</td></tr><tr><th style="width:auto">弹簧外径 D₂</th><td class="v">29.00</td><td class="u">mm</td></tr><tr><th style="width:auto">弹簧内径 D₁</th><td class="v">21.00</td><td class="u">mm</td></tr><tr><th style="width:auto">刚度 F′ = Gd⁴/(8D³n)</th><td class="v">20.224</td><td class="u">N/mm</td></tr><tr><th style="width:auto">工作变形 λ = F/F′</th><td class="v">14.83</td><td class="u">mm</td></tr><tr><th style="width:auto">压并变形 λ<sub>b</sub></th><td class="v">40.00</td><td class="u">mm</td></tr><tr><th style="width:auto">工作切应力 τ = 8KFD/(πd³)</th><td class="v">370.4</td><td class="u">MPa</td></tr><tr><th style="width:auto">许用切应力 [τ]</th><td class="v">450</td><td class="u">MPa</td></tr><tr><th style="width:auto">总圈数 n₁ = n + 2</th><td class="v">10.0</td><td class="u">圈</td></tr><tr><th style="width:auto">自由高度 H₀</th><td class="v">78.00</td><td class="u">mm</td></tr><tr><th style="width:auto">压并高度 H<sub>b</sub></th><td class="v">38.00</td><td class="u">mm</td></tr><tr><th style="width:auto">高径比 b = H₀/D</th><td class="v">3.120</td><td class="u">—</td></tr><tr><th style="width:auto">推荐节距范围 0.28D~0.5D</th><td class="v">7.00 ~ 12.50</td><td class="u">mm</td></tr><tr><th style="width:auto">工作载荷下弹簧高度</th><td class="v">63.17</td><td class="u">mm</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)">旋绕比 C = D/d（推荐 4~16）&nbsp;&nbsp;|&nbsp;&nbsp;曲度系数 K = (4C−1)/(4C−4) + 0.615/C<br>刚度 F′ = Gd⁴ / (8D³n)&nbsp;&nbsp;|&nbsp;&nbsp;变形 λ = F / F′ = 8FD³n / (Gd⁴)&nbsp;&nbsp;|&nbsp;&nbsp;τ = 8KFD / (πd³)<br>自由高度 H₀：并紧磨平 n·t + 1.5d；并紧不磨平 n·t + 2d；不并紧 n·t + 3d（教材常用值）。<br>稳定性：两端固定 b = H₀/D ≤ 5.3，一端固定一端自由 ≤ 3.7。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="spring";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

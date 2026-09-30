@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机械工程师在线工具箱 · 免费机械设计计算器（15 个工具）</title>
+<meta name="description" content="免费在线机械设计计算器，共 15 个工具：渐开线齿轮几何与强度校核、传动比分配、V带、轴弯扭合成、轴承寿命、平键、滚子链、压缩弹簧、螺栓组、螺纹自锁、梁变形、极限与配合、过盈配合、压杆稳定。免注册，浏览器本地计算，数据不上传。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1>机械设计在线计算器</h1>
+  <p class="sub">
+    免费 · 免注册 · 打开即用，共 <b>15 个</b>工具。所有计算在浏览器本地完成，数据不上传。
+    面向机械工程师、设备维护、以及做课程设计的学生。
+  </p>
+
+  <h2>齿轮与传动</h2>
+  <div class="grid">
+    <a class="card" href="gear.html">
+      <b>渐开线齿轮几何参数</b>
+      <small>分度圆/齿顶圆/齿根圆/基圆、齿顶厚、端面重合度 ε<sub>α</sub>、根切与齿顶变尖校验，附 1:1 齿形预览图。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-gearstrength.html">
+      <b>齿轮强度校核（接触 + 弯曲）</b>
+      <small>齿面接触应力 σ<sub>H</sub> 与齿根弯曲应力 σ<sub>F</sub> 双校核，齿形系数按 GB/T 3480 表按齿数自动插值，并反算允许扭矩、所需齿宽与模数。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-ratio.html">
+      <b>传动比分配（两级减速器）</b>
+      <small>按展开式两级圆柱齿轮减速器的常用分配规则 i₁≈1.35·i₂ 反算各级传动比。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-belt.html">
+      <b>V 带传动</b>
+      <small>计算功率、带速、初定中心距、基准带长、小轮包角，并给出带速与包角预警。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-chain.html">
+      <b>滚子链传动</b>
+      <small>链速、圆周力、压轴力、链节数与实际中心距，附齿数与链速预警。</small>
+      <span class="tag">可用</span>
+    </a>
+  </div>
+
+  <h2>轴系与支承</h2>
+  <div class="grid">
+    <a class="card" href="t-shaft.html">
+      <b>轴 · 弯扭合成强度校核</b>
+      <small>第三强度理论：抗弯/抗扭截面系数、当量弯矩 M<sub>ca</sub>、计算应力、安全裕度与最小轴径。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-bearing.html">
+      <b>滚动轴承寿命 L₁₀</b>
+      <small>基本额定寿命 (C/P)^ε · 10⁶/(60n) 小时，可设目标寿命自动判定是否合格。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-key.html">
+      <b>平键联接强度校核</b>
+      <small>按轴径自动查 GB/T 1096 键截面，校核挤压与剪切应力，反算所需键长，含 A/B/C 型工作长度。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-pressfit.html">
+      <b>过盈配合压入力与温差装配</b>
+      <small>拉梅公式算配合面压强、压入力/分离力、可传递扭矩、温差法加热温度，并校核轮毂内表面等效应力是否胀裂。</small>
+      <span class="tag">可用</span>
+    </a>
+  </div>
+
+  <h2>联接与弹性元件</h2>
+  <div class="grid">
+    <a class="card" href="t-bolt.html">
+      <b>螺栓组联接强度校核</b>
+      <small>受轴向载荷螺栓组的预紧力、残余预紧力、总拉力与拉应力校核，内置 M6~M30 螺纹小径表。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-thread.html">
+      <b>螺纹基本尺寸与自锁</b>
+      <small>中径 d₂、小径 d₁、d₃、升角 ψ 与当量摩擦角 ρ′，判断是否自锁，内置 M3~M64 粗牙螺距表。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-spring.html">
+      <b>圆柱螺旋压缩弹簧</b>
+      <small>旋绕比与曲度系数、刚度、变形、切应力校核、自由高度与稳定性判断。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-beam.html">
+      <b>梁的弯曲变形</b>
+      <small>8 种常见工况的最大挠度与转角：简支/悬臂/两端固定，集中力/均布/偏心/力偶，按挠跨比校核。</small>
+      <span class="tag">可用</span>
+    </a>
+
+    <a class="card" href="t-column.html">
+      <b>压杆稳定校核</b>
+      <small>柔度 λ 与临界柔度 λ<sub>p</sub>，判断欧拉公式是否适用，给出临界力、临界应力与稳定安全系数。</small>
+      <span class="tag">可用</span>
+    </a>
+  </div>
+
+  <h2>公差与配合</h2>
+  <div class="grid">
+    <a class="card" href="t-tol.html">
+      <b>极限与配合计算</b>
+      <small>内置 GB/T 1800.3 标准公差表（IT5~IT18、≤500 mm），算极限尺寸、最大/最小间隙、配合公差与配合性质。</small>
+      <span class="tag">可用</span>
+    </a>
+  </div>
+
+  <h2>使用说明</h2>
+  <div class="panel">
+    <p style="margin:0;color:var(--dim);font-size:13.5px">
+      所有公式依据《机械设计》教材与 GB/T 标准常用约定：压力角默认 20°，齿顶高系数 h<sub>a</sub>*=1，
+      顶隙系数 c*=0.25，均可在页面内修改。计算结果供设计与校核参考，
+      <b>最终图纸与工艺文件请以企业标准、现行国标和主管工程师审核为准</b>。
+      全部计算在浏览器本地完成，不联网、不收集任何数据。
+    </p>
+  </div>
+</main>
+
+<footer>
+  机械工具箱 · 15 个工具 · 本地计算，不收集任何数据
+</footer>
+</body>
+</html>

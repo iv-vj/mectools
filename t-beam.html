@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>梁的弯曲变形（挠度与转角） - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="8 种常见支承与载荷组合下的最大挠度、截面转角与最大弯矩，并按许用挠度比自动校核。。免费在线计算，免注册，浏览器本地完成，数据不上传。梁的弯曲变形（挠度与转角）">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-beam.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梁的弯曲变形（挠度与转角） - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="8 种常见支承与载荷组合下的最大挠度、截面转角与最大弯矩，并按许用挠度比自动校核。。免费在线计算，免注册，浏览器本地完成，数据不上传。梁的弯曲变形（挠度与转角）">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-beam.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "梁的弯曲变形（挠度与转角）", "url": "https://iv-vj.github.io/mectools/t-beam.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "8 种常见支承与载荷组合下的最大挠度、截面转角与最大弯矩，并按许用挠度比自动校核。。免费在线计算，免注册，浏览器本地完成，数据不上传。梁的弯曲变形（挠度与转角）", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">梁的弯曲变形（挠度与转角）</h1>
+  <p class="sub" id="desc">8 种常见支承与载荷组合下的最大挠度、截面转角与最大弯矩，并按许用挠度比自动校核。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：支承与载荷、跨度 L、载荷位置 a（偏心方式用，自左端起）、集中力 P、均布载荷 q、集中力偶 M₀、弹性模量 E（钢 206000）、截面惯性矩 I、许用挠度 [f] = L /。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg ok">简支梁 · 跨中集中力 P：最大挠度 f<sub>max</sub> = <b>0.1011 mm</b>（位于跨中），许用挠度 [f] = L/500 = 2.0000 mm —— <b>刚度合格</b>，裕度 19.78 倍。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">载荷情况</th><td class="v">简支梁 · 跨中集中力 P</td><td class="u"></td></tr><tr><th style="width:auto">抗弯刚度 E·I</th><td class="v">206000000000</td><td class="u">N·mm²</td></tr><tr><th style="width:auto">最大挠度 f<sub>max</sub></th><td class="v">0.10113</td><td class="u">mm</td></tr><tr><th style="width:auto">最大挠度出现位置</th><td class="v">跨中</td><td class="u"></td></tr><tr><th style="width:auto">挠跨比 f<sub>max</sub> / L</th><td class="v">0.000101</td><td class="u">—</td></tr><tr><th style="width:auto">支座 A 转角 θ<sub>A</sub></th><td class="v">0.01738</td><td class="u">°</td></tr><tr><th style="width:auto">支座 B 转角 θ<sub>B</sub></th><td class="v">0.01738</td><td class="u">°</td></tr><tr><th style="width:auto">支座 A 转角（弧度）</th><td class="v">0.0003034</td><td class="u">rad</td></tr><tr><th style="width:auto">最大弯矩 M<sub>max</sub></th><td class="v">250000.0</td><td class="u">N·mm</td></tr><tr><th style="width:auto">最大弯矩处的弯曲正应力 σ = M/W</th><td class="v">需配合截面抗弯模量 W</td><td class="u"></td></tr><tr><th style="width:auto">许用挠度 [f] = L/500</th><td class="v">2.0000</td><td class="u">mm</td></tr><tr><th style="width:auto">挠度裕度 [f] / f<sub>max</sub></th><td class="v">19.776</td><td class="u">—</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)"><b>常用截面惯性矩</b>（中性轴过形心）：矩形 <b>I = b·h³/12</b>；实心圆 <b>I = πd⁴/64 ≈ 0.0491d⁴</b>；圆管 <b>I = π(D⁴ − d⁴)/64</b>；工字钢、槽钢等查型钢表。<br>E 取钢 206000 MPa、铸铁 120000 MPa、铝合金 70000 MPa、铜 110000 MPa。<br><b>许用挠度</b>常见取值：一般轴 [f] = (0.0003~0.0005)L、<b>安装齿轮处 [f] = (0.01~0.03)m</b>（m 为模数）、机床主轴 [f] = 0.0002L、桥式吊车梁 L/700、一般建筑梁 L/250~L/400。本页按 [f] = L/(下方分母) 校核。<br>本页只做<b>弹性、小变形</b>计算。若计算挠度与跨度之比超过约 1/50，线性梁理论已不适用，结果仅供参考。<br>简支梁偏心载荷的最大挠度出现在 x = √((L²−b²)/3) 处（b 为较短一段长度），本页据此计算。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="beam";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

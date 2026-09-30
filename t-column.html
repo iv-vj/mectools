@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>压杆稳定校核（欧拉公式） - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="算柔度 λ 与临界柔度 λp，判断欧拉公式是否适用，并给出临界力、临界应力与稳定安全系数。。免费在线计算，免注册，浏览器本地完成，数据不上传。压杆稳定校核（欧拉公式）">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-column.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="压杆稳定校核（欧拉公式） - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="算柔度 λ 与临界柔度 λp，判断欧拉公式是否适用，并给出临界力、临界应力与稳定安全系数。。免费在线计算，免注册，浏览器本地完成，数据不上传。压杆稳定校核（欧拉公式）">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-column.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "压杆稳定校核（欧拉公式）", "url": "https://iv-vj.github.io/mectools/t-column.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "算柔度 λ 与临界柔度 λp，判断欧拉公式是否适用，并给出临界力、临界应力与稳定安全系数。。免费在线计算，免注册，浏览器本地完成，数据不上传。压杆稳定校核（欧拉公式）", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">压杆稳定校核（欧拉公式）</h1>
+  <p class="sub" id="desc">算柔度 λ 与临界柔度 λp，判断欧拉公式是否适用，并给出临界力、临界应力与稳定安全系数。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：长度系数 μ、杆长 L、弹性模量 E、最小惯性矩 I&lt;sub&gt;min&lt;/sub&gt;、横截面积 A、材料的比例极限 σ&lt;sub&gt;p&lt;/sub&gt;、实际工作压力 F、规定的稳定安全系数 [n]&lt;sub&gt;st&lt;/sub&gt;。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg err">柔度 λ = 89.4 &lt; λ<sub>p</sub> = 100.8，属<b>中/小柔度压杆</b>，<b>欧拉公式不适用</b>（会明显高估临界力）。</div><div class="msg warn">请改用折减系数法：σ = F/A ≤ φ·[σ]，φ 按材料与 λ 查表（GB 50017 或材料力学教材附录）。本页仍列出欧拉公式的结果供参考，但<b>不要用它做合格判定</b>。</div><div class="msg warn">欧拉公式参考值：F<sub>cr</sub> = 203.31 kN、σ<sub>cr</sub> = 254.1 MPa —— 该值是偏大的乐观估计。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">长度系数 μ</th><td class="v">1.00</td><td class="u">—</td></tr><tr><th style="width:auto">杆长 L</th><td class="v">1000.0</td><td class="u">mm</td></tr><tr><th style="width:auto">计算长度 μL</th><td class="v">1000.0</td><td class="u">mm</td></tr><tr><th style="width:auto">截面惯性半径 i = √(I/A)</th><td class="v">11.1803</td><td class="u">mm</td></tr><tr><th style="width:auto">柔度 λ = μL/i</th><td class="v">89.44</td><td class="u">—</td></tr><tr><th style="width:auto">临界柔度 λ<sub>p</sub> = π√(E/σ<sub>p</sub>)</th><td class="v">100.83</td><td class="u">—</td></tr><tr><th style="width:auto">λ 与 λ<sub>p</sub> 关系</th><td class="v">λ < λp（欧拉不适用）</td><td class="u"></td></tr><tr><th style="width:auto">临界力 F<sub>cr</sub> = π²EI/(μL)²</th><td class="v">203314</td><td class="u">N</td></tr><tr><th style="width:auto">临界应力 σ<sub>cr</sub> = π²E/λ²</th><td class="v">254.14</td><td class="u">MPa</td></tr><tr><th style="width:auto">实际工作压力 F</th><td class="v">50000</td><td class="u">N</td></tr><tr><th style="width:auto">工作压应力 σ = F/A</th><td class="v">62.50</td><td class="u">MPa</td></tr><tr><th style="width:auto">稳定安全系数 n = F<sub>cr</sub>/F</th><td class="v">4.066</td><td class="u">—</td></tr><tr><th style="width:auto">规定安全系数 [n]<sub>st</sub></th><td class="v">3.00</td><td class="u">—</td></tr><tr><th style="width:auto">允许的最大工作压力 [F]</th><td class="v">67771</td><td class="u">N</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)"><b>临界柔度</b> λ<sub>p</sub> = π·√(E/σ<sub>p</sub>)，σ<sub>p</sub> 为材料的比例极限（Q235 取约 200 MPa，合金钢可更高）。<br><b>柔度</b> λ = μ·L / i，其中 i = √(I<sub>min</sub>/A) 为截面最小惯性半径。<br><b>欧拉公式（仅当 λ ≥ λ<sub>p</sub> 时适用）</b>：F<sub>cr</sub> = π²EI<sub>min</sub> / (μL)²，σ<sub>cr</sub> = π²E / λ²。<br><b>为什么必须判 λ</b>：λ &lt; λ<sub>p</sub> 时杆属于中柔度或小柔度压杆，欧拉公式会给出<b>偏大</b>的临界力，结果偏危险。工程上用折减系数法（φ 表）或经验公式处理，<b>本页不覆盖那种情况</b>，只会明确提示你。<br>I 要取截面<b>最小</b>惯性矩对应的方向 —— 压杆总是朝最弱的方向失稳。<br>稳定安全系数 [n]<sub>st</sub> 常取：钢材 1.8~3.0、铸铁 4.5~5.5、木 2.5~3.5。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="column";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>

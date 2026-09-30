@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>过盈配合压入力与温差装配 - 免费在线计算器 · 机械工具箱</title>
+<meta name="description" content="按厚壁圆筒（拉梅）公式算配合面压强、所需的压入力/压出力、可传递扭矩，以及温差法所需加热温度。。免费在线计算，免注册，浏览器本地完成，数据不上传。过盈配合压入力与温差装配">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/t-pressfit.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="过盈配合压入力与温差装配 - 免费在线计算器 · 机械工具箱">
+<meta property="og:description" content="按厚壁圆筒（拉梅）公式算配合面压强、所需的压入力/压出力、可传递扭矩，以及温差法所需加热温度。。免费在线计算，免注册，浏览器本地完成，数据不上传。过盈配合压入力与温差装配">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/t-pressfit.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "过盈配合压入力与温差装配", "url": "https://iv-vj.github.io/mectools/t-pressfit.html", "applicationCategory": "EngineeringApplication", "operatingSystem": "Any (browser)", "browserRequirements": "Requires JavaScript", "inLanguage": "zh-CN", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}, "description": "按厚壁圆筒（拉梅）公式算配合面压强、所需的压入力/压出力、可传递扭矩，以及温差法所需加热温度。。免费在线计算，免注册，浏览器本地完成，数据不上传。过盈配合压入力与温差装配", "isPartOf": {"@type": "WebSite", "name": "机械工具箱", "url": "https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+  </nav>
+</header>
+
+<main>
+  <h1 id="title">过盈配合压入力与温差装配</h1>
+  <p class="sub" id="desc">按厚壁圆筒（拉梅）公式算配合面压强、所需的压入力/压出力、可传递扭矩，以及温差法所需加热温度。</p>
+  <p class="sub" style="margin-top:-6px">输入参数：配合直径 d、轮毂外径 d₂（空心轴时也指轮毂）、轴内径 d₁（实心轴填 0）、过盈量 δ（直径上的）、配合长度 L、轴材料弹性模量 E₁、轮毂材料弹性模量 E₂、轴泊松比 μ₁、轮毂泊松比 μ₂、配合面摩擦系数 f、轮毂线膨胀系数 α。参数可在页面内随时修改，结果实时更新。本页所有计算在浏览器本地完成，不联网、不上传数据。</p>
+
+  <div class="panel"><div class="row" id="form"></div></div>
+  <div id="msgs"><div class="msg ok">配合面压强 <b>p = 38.63 MPa</b>；压入力 <b>F = 116.49 kN</b>（≈ 11.89 吨力）。</div><div class="msg ok">可传递扭矩 T = 5824.5 N·m（按摩擦传递，未计安全系数；联轴器等场合建议再除 1.5~2 的安全系数）。</div><div class="msg ok">温差法：使轮毂直径变化 50 μm 需温差 <b>ΔT = 43.5 ℃</b>，加上 20~40 ℃ 装配余量后建议加热到温升 73.5 ℃ 以上。</div><div class="msg ok">轮毂内表面环向应力 <b>σ<sub>t</sub> = 64.4 MPa</b>，按最大剪应力理论的等效应力 σ<sub>e</sub> = σ<sub>t</sub> − σ<sub>r</sub> = 103.0 MPa。低于常用钢材屈服强度，弹性范围内安全。</div></div>
+  <h2>计算结果</h2>
+  <div class="panel"><table id="out"><tr><th style="width:auto">配合直径 d</th><td class="v">100.00</td><td class="u">mm</td></tr><tr><th style="width:auto">直径过盈量 δ</th><td class="v">50.0</td><td class="u">μm</td></tr><tr><th style="width:auto">轴系数 C₁</th><td class="v">0.7000</td><td class="u">—</td></tr><tr><th style="width:auto">轮毂系数 C₂</th><td class="v">1.9667</td><td class="u">—</td></tr><tr><th style="width:auto">柔度项 C₁/E₁ + C₂/E₂</th><td class="v">1.2945e-5</td><td class="u">mm²/N</td></tr><tr><th style="width:auto">配合面压强 p</th><td class="v">38.625</td><td class="u">MPa</td></tr><tr><th style="width:auto">压入力 / 分离力 F</th><td class="v">116490</td><td class="u">N</td></tr><tr><th style="width:auto">压入力（吨力）</th><td class="v">11.887</td><td class="u">tf</td></tr><tr><th style="width:auto">可传递扭矩 T</th><td class="v">5824513</td><td class="u">N·mm</td></tr><tr><th style="width:auto">可传递扭矩（除以 2 安全系数）</th><td class="v">2912.3</td><td class="u">N·m</td></tr><tr><th style="width:auto">可传递轴向力（摩擦）</th><td class="v">116490</td><td class="u">N</td></tr><tr><th style="width:auto">温差法所需温差 ΔT</th><td class="v">43.48</td><td class="u">℃</td></tr><tr><th style="width:auto">建议加热温升（ΔT + 30）</th><td class="v">73.5</td><td class="u">℃</td></tr><tr><th style="width:auto">轮毂内表面环向应力 σ<sub>t</sub></th><td class="v">64.38</td><td class="u">MPa</td></tr><tr><th style="width:auto">轮毂内表面径向应力 σ<sub>r</sub></th><td class="v">-38.63</td><td class="u">MPa</td></tr><tr><th style="width:auto">等效应力 σ<sub>e</sub>(最大剪应力理论)</th><td class="v">103.00</td><td class="u">MPa</td></tr><tr><th style="width:auto">轮毂外径与配合直径之比 d₂/d</th><td class="v">2.000</td><td class="u">—</td></tr></table></div>
+  <!-- 有些工具除了结果表还要输出图形/HTML（如齿形预览）：run() 返回的 html 字段渲染到这里 -->
+  <div id="html"></div>
+  <div id="extra"></div>
+
+  <h2>公式与取值说明</h2>
+  <div class="panel">
+    <p id="note" style="color:var(--dim);font-size:13px;line-height:2;margin:0;font-family:var(--mono)"><b>厚壁圆筒（拉梅）公式</b>：配合面压强<br>&nbsp;&nbsp;<b>p = δ / [ d·( C₁/E₁ + C₂/E₂ ) ]</b><br>其中轴 <b>C₁ = (d² + d₁²)/(d² − d₁²) − μ₁</b>，实心轴 d₁ = 0 时退化为 <b>C₁ = 1 − μ₁</b>；轮毂 <b>C₂ = (d₂² + d²)/(d₂² − d²) + μ₂</b>。<br><b>压入力</b> F = π·d·L·p·f（把过盈面推合的轴向力，或压出时的分离力，两者大小相同）。<br><b>可传递扭矩</b> T = π·d²·L·p·f / 2。<br><b>温差法</b>：加热轮毂（或冷却轴）使直径变化量等于过盈量，所需温差 <b>ΔT = δ / (α·d)</b>；实际装配温度还要在 ΔT 上加 20~40 ℃ 的装配余量。<br><b>注意</b>：本页只算弹性范围。若算出的压强 p 使轮毂内表面等效应力超过材料屈服强度，则装配时会塑性变形甚至胀裂 —— <b>务必用下面的等效应力一行核对</b>（按最大剪应力理论估算环向应力）。另外算出的压入力若大到不现实，说明该过盈用压装不可行，应改温差法或换配合。</p>
+  </div>
+
+  <h2>其他工具</h2>
+  <div class="panel" id="others" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+<script>window.__TOOL__="pressfit";</script>
+<script src="lib.js"></script>
+<script src="tools.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const row = (k, v, u, hi) => '<tr' + (hi ? ' class="hi"' : '') + '><th style="width:auto">' + k +
+  '</th><td class="v">' + v + '</td><td class="u">' + u + '</td></tr>';
+
+/* 按 ?t=id 取工具；构建期生成的每工具独立页（t-<id>.html）用 window.__TOOL__ 指定。
+   取不到就回首页。 */
+const params = new URLSearchParams(location.search);
+const id = params.get('t') || window.__TOOL__ || null;
+const tool = (MG.TOOLS || []).filter(t => t.id === id)[0];
+
+if (!tool) {
+  document.title = '工具未找到 · 机械工具箱';
+  $('title').textContent = '工具未找到';
+  $('desc').innerHTML = '请从首页选择工具。<a href="index.html">返回全部工具 →</a>';
+  $('form').innerHTML = ''; $('note').innerHTML = ''; $('out').innerHTML = '';
+} else {
+  document.title = tool.name + ' · 机械工具箱';
+  $('title').textContent = tool.name;
+  $('desc').textContent = tool.desc || '';
+  $('note').innerHTML = tool.note || '';
+
+  // 建表单
+  $('form').innerHTML = tool.inputs.map(inp => {
+    let ctl;
+    if (inp.sel) {
+      ctl = '<select id="f_' + inp.k + '">' + inp.sel.map(o =>
+        '<option value="' + o[0] + '"' + (o[0] === inp.def ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+    } else {
+      ctl = '<input type="number" id="f_' + inp.k + '" value="' + inp.def + '" step="any">';
+    }
+    return '<div class="field"><label>' + inp.label +
+      (inp.unit && inp.unit !== '—' ? ' (' + inp.unit + ')' : '') + '</label>' + ctl + '</div>';
+  }).join('');
+
+  // 其他工具导航（指向构建期生成的独立静态页 t-<id>.html，便于搜索引擎收录）
+  $('others').innerHTML = (MG.TOOLS || []).filter(t => t.id !== tool.id).map(t =>
+    '<a class="card" style="flex:1 1 220px" href="t-' + t.id + '.html"><b>' + t.name +
+    '</b><small>' + (t.desc || '').slice(0, 46) + '…</small></a>').join('');
+
+  function run() {
+    const v = {};
+    tool.inputs.forEach(i => { v[i.k] = $('f_' + i.k).value; });
+    let r;
+    try { r = tool.run(v); }
+    catch (e) { r = { msgs: [['err', '计算出错：' + e.message]], rows: [] }; }
+    $('msgs').innerHTML = (r.msgs || []).map(m =>
+      '<div class="msg ' + m[0] + '">' + m[1] + '</div>').join('');
+    $('out').innerHTML = (r.rows || []).map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('');
+    // html 字段（可选）：工具自带的图形/HTML 输出，包在带工具 id 前缀的容器里，
+    // 这样多视图共用一个 DOM 时（离线单文件版）不会互相串样式或 id。
+    $('html').innerHTML = r.html
+      ? '<div class="panel" id="view_' + tool.id + '">' + r.html + '</div>'
+      : '';
+    $('extra').innerHTML = (r.extra || []).map(t =>
+      '<div class="panel"><h2>' + t.title + '</h2><table>' +
+      t.rows.map(x => row(x[0], x[1], x[2] === undefined ? '' : x[2], x[3])).join('') + '</table></div>').join('');
+  }
+
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('input', run));
+  tool.inputs.forEach(i => $('f_' + i.k).addEventListener('change', run));
+  run();
+}
+</script>
+</body>
+</html>
