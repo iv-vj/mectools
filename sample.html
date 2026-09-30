@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>先看样例：数据体检报告、多表合并、PDF 提取、曲线还原、批量出图 - 机械工具箱</title>
+<meta name="description" content="工程 / 科研数据处理服务的真实样例下载：数据体检报告、多表合并汇总、PDF 报表提取、图片曲线还原、不规范数据清洗、实验数据批量出图。每个样例都给输入和输出文件，可以自己打开看，不用先付钱。">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/sample.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="先看样例 —— 每一个都能下载下来自己打开">
+<meta property="og:description" content="数据体检报告、多表合并、PDF 提取、曲线还原、批量出图。输入和输出文件都给你，不用先付钱。">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/sample.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"数据处理服务样例","url":"https://iv-vj.github.io/mectools/sample.html","inLanguage":"zh-CN","about":"工程与科研场景的数据处理样例：数据体检、多表合并汇总、PDF 表格提取、图片曲线数据还原、数据清洗、实验数据批量出图","isPartOf":{"@type":"WebSite","name":"机械工具箱","url":"https://iv-vj.github.io/mectools/"}}</script>
+<link rel="stylesheet" href="style.css">
+<style>
+  .ex{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:16px}
+  .ex h3{margin:0 0 4px;font-size:17px}
+  .ex h3 i{display:inline-block;font-style:normal;font-size:12px;font-weight:600;color:#06121d;
+    background:var(--acc);border-radius:5px;padding:1px 8px;margin-right:9px;vertical-align:2px}
+  .ex .lead{color:var(--dim);font-size:13.5px;margin:0 0 14px;line-height:1.85}
+  .ex .case{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:0 0 14px;
+    font-size:13px;color:var(--dim);line-height:1.9}
+  .ex .case b{color:var(--fg);font-weight:600}
+  .dl{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+  .dl a{display:inline-block;background:rgba(63,185,80,.10);border:1px solid var(--line);border-radius:8px;
+    padding:9px 14px;font-size:13.5px;line-height:1.3}
+  .dl a b{display:block;font-weight:600;color:var(--fg)}
+  .dl a span{display:block;color:var(--dim);font-size:11.5px;margin-top:3px}
+  .dl a:hover{border-color:var(--acc);text-decoration:none}
+  .ex img{width:100%;border:1px solid var(--line);border-radius:8px;display:block;background:#fff}
+  .shotbox{margin-top:4px}
+  .shotbox .lab{font-size:12px;color:var(--dim);margin:0 0 6px}
+  .hero-b{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+  .hero-b .txt{flex:1 1 380px;min-width:280px}
+  .hero-b .txt p{line-height:1.95}
+  .free{background:var(--panel);border:1px solid var(--line);border-left:4px solid #3fb950;
+    border-radius:10px;padding:18px 20px;margin:18px 0}
+  .free h3{margin:0 0 8px;font-size:16px}
+  .free p{margin:0 0 10px;color:var(--dim);font-size:13.5px;line-height:1.95}
+  table.sc{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.sc th,table.sc td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+  table.sc th{color:var(--dim);font-weight:600;width:32%}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+    <a href="product.html">Excel 成品</a>
+    <a href="service.html">代做数据</a>
+  </nav>
+</header>
+
+<main>
+<h1>先看样例，再决定要不要花钱</h1>
+<p class="sub">说"能做什么"谁都会说。这一页把真跑出来的<strong>输出文件直接给你下载</strong> —— 用 Excel 打开看、看它的列怎么排、表头在第几行、有没有多余的行。看完觉得行再谈。</p>
+
+<div class="hero-b">
+  <div class="txt">
+    <p>下面每个样例都是<strong>先造一份刻意做脏的输入数据</strong>，再用交付给你的那个脚本跑一遍，产出的就是这份文件。
+       所以我不会拿"示意图"糊弄你 —— 你下载到的是脚本真实输出。</p>
+    <p>输入数据是我为测试专门造的（规模比真实项目小得多），所以<strong>数字本身没有意义，要看的是格式和结构</strong>：
+       表头在第几行、来源有没有留痕、脏值被怎么处理、有没有一份说明改了什么。</p>
+    <p>如果你手上的数据和我下面某个样例像，那基本可以直接套。
+       如果你看完还是不确定，把文件发我做一份免费的<strong>《数据体检报告》</strong>，那份报告更接近你的实际情况。</p>
+  </div>
+</div>
+
+<div class="free">
+  <h3>不用先付钱：先免费拿一份《数据体检报告》</h3>
+  <p>把你的文件发我（脱敏也行），我先出一份报告：这份数据干不干净、能不能直接合并、有哪几列需要人工处理、自动化能省多少时间。
+     报告给你，<strong>不收钱，你可以拿去比价</strong>。如果数据量不大、手工做更快，我会直接告诉你不用买脚本。</p>
+  <div class="dl">
+    <a download href="sample/样例_数据体检报告.md"><b>下载一份真实的体检报告 →</b><span>样例_数据体检报告.md · 5.2 KB · Markdown，记事本能看</span></a>
+  </div>
+</div>
+
+<h2>五个样例，输入和输出都在</h2>
+
+<div class="ex">
+  <h3><i>01</i>多张表按编号合并汇总</h3>
+  <p class="lead">几十张表表头不一样、列顺序不一样、还夹着坏文件，拼成一张总表，并给出一份《读取报告》说明哪些文件被跳过、为什么跳过。</p>
+  <p class="case"><b>输入：</b>8 个文件，混了 .xlsx 和 .csv、列顺序打乱、表头带空格、金额写成 <code>¥1,234.00</code> 文本、一个 GBK 编码的 csv（带全角数字）、一个有两个工作表的 xlsx、一个子文件夹里的文件、一个二进制垃圾 <code>损坏.xlsx</code>、一个空 csv。<br>
+     <b>输出：</b>3 张表 —— 汇总（按编号分组，含合计行）/ 明细（每行带来源文件与来源工作表）/ 读取报告。表头统一在第 1 行，可以直接 <code>pd.read_excel</code> 读回。</p>
+  <div class="dl">
+    <a download href="sample/样例_多表合并汇总.xlsx"><b>样例_多表合并汇总.xlsx →</b><span>9.5 KB · 3 张工作表</span></a>
+    <a download href="sample/样例输入_脏数据表.xlsx"><b>样例输入_脏数据表.xlsx →</b><span>5.7 KB · 感受一下"脏"的程度</span></a>
+  </div>
+</div>
+
+<div class="ex">
+  <h3><i>02</i>PDF 报表数据提取</h3>
+  <p class="lead">试验机、光谱仪、三坐标、环境箱导出的报告全是 PDF，数据只能肉眼抄。按表格几何结构提取，<strong>没有框线的表格也能提</strong> —— 这一条同行普遍做不到。</p>
+  <p class="case"><b>输入：</b>3 页试验报告 PDF，第 1 页是 6 列有框线的表、<b>第 2 页是 4 列完全无框线的表</b>（仪器报告里最常见的那种）、第 3 页是 7 列表，外带一批「参数: 值」形式的元数据。<br>
+     <b>输出：</b>数据表（前置 5 列溯源：来源文件 / 页 / 表序号 / 识别方式 / 行号）、参数表、提取报告。</p>
+  <div class="dl">
+    <a download href="sample/样例_PDF表格提取.xlsx"><b>样例_PDF表格提取.xlsx →</b><span>9.0 KB · 数据 + 参数 + 提取报告</span></a>
+  </div>
+</div>
+
+<div class="ex">
+  <h3><i>03</i>图片 / 曲线数据提取</h3>
+  <p class="lead">论文插图、仪器截图里的曲线还原成数值，拿去重新拟合或做对比。交付时会附一张<strong>叠加核对图</strong>：把提取到的点画回原图上，准不准你自己一眼验证。</p>
+  <p class="case"><b>输入：</b>一张 900×650 的折线图（坐标轴方框 + 刻度 + 曲线，21 个真值顶点）。<br>
+     <b>输出：</b>逐像素提取的 721 个点（x / y / 像素坐标），以及下面这张叠加核对图 —— 绿线压在红线上，两侧露出红色边缘就说明逐像素重合。</p>
+  <div class="dl">
+    <a download href="sample/样例_图片曲线提取.xlsx"><b>样例_图片曲线提取.xlsx →</b><span>27.6 KB · 721 行数据点</span></a>
+    <a download href="sample/样例_曲线提取叠加核对图.png"><b>样例_曲线提取叠加核对图.png →</b><span>7.5 KB · 就是那张核对图</span></a>
+  </div>
+  <div class="shotbox">
+    <p class="lab">叠加核对图（绿 = 提取结果，压在原曲线上）</p>
+    <img src="sample/样例_曲线提取叠加核对图.png" alt="图片曲线数据提取的叠加核对图：绿色提取结果压在原红色曲线上" loading="lazy">
+  </div>
+</div>
+
+<div class="ex">
+  <h3><i>04</i>不规范数据清洗成规范表</h3>
+  <p class="lead">全角数字、<code>¥1,234.00</code>、<code>5 件</code>、<code>1.2万</code>、五种日期写法、八种是/否写法、前后空白、整行全空、完全重复行、列名 <code>Unnamed: 7</code> —— 一次性统一掉，并给出<strong>一份逐列说明改了什么</strong>的清洗报告。</p>
+  <p class="case"><b>输入：</b>10 行 × 9 列，刻意做脏（就是上面那个「样例输入_脏数据表」）。<br>
+     <b>输出：</b>清洗后 8 行 × 8 列 + 清洗报告（列名 / 处理动作 / 影响行数 / 说明）。数值列还会用 1.5×IQR 提示异常值，但<strong>只提示、不改数据</strong> —— 离群不等于错误。</p>
+  <div class="dl">
+    <a download href="sample/样例_数据清洗.xlsx"><b>样例_数据清洗.xlsx →</b><span>7.9 KB · 清洗后数据 + 清洗报告</span></a>
+    <a download href="sample/样例输入_脏数据表.xlsx"><b>样例输入_脏数据表.xlsx →</b><span>5.7 KB · 和 01 用的是同一份脏数据</span></a>
+  </div>
+</div>
+
+<div class="ex">
+  <h3><i>05</i>实验数据批量出图</h3>
+  <p class="lead">一组数据出十几张图还要统一格式，是最耗人的活。一次批量出 SVG（矢量，直接进论文）+ PNG（可带误差棒、线性拟合与 R²），同时生成一份<strong>带原生 Excel 图表对象</strong>的 xlsx 和一个能翻看的图库页。</p>
+  <p class="case"><b>输入：</b>15 行 × 5 列的力学实验数据（GBK 编码的 csv，含分组列）。<br>
+     <b>输出：</b>3 张分组图（每张 SVG + PNG）、<code>图表.xlsx</code>（图表是可在 Excel 里继续编辑的原生对象，不是贴图）、<code>index.html</code> 图库。不需要 matplotlib。</p>
+  <div class="dl">
+    <a download href="sample/样例_实验数据批量出图.xlsx"><b>样例_实验数据批量出图.xlsx →</b><span>13.6 KB · 图表是原生 Excel 对象</span></a>
+    <a download href="sample/样例_批量出图_结果.png"><b>样例_批量出图_结果.png →</b><span>70.8 KB · 其中一张，带误差棒和拟合线</span></a>
+  </div>
+  <div class="shotbox">
+    <p class="lab">其中一张出图结果（带误差棒与线性拟合 R²）</p>
+    <img src="sample/样例_批量出图_结果.png" alt="实验数据批量出图的其中一张结果，带误差棒与线性拟合直线" loading="lazy">
+  </div>
+</div>
+
+<h2>这些样例能说明什么、不能说明什么</h2>
+<div class="panel">
+<table class="sc">
+  <tr><th>能说明</th><td>输出文件的<strong>结构</strong>：表头在哪一行、有没有溯源列、脏值被怎么处理、有没有配套说明文档、是不是能直接读回。这些是拿到手才知道的东西。</td></tr>
+  <tr><th>能说明</th><td>脚本确实处理过这些具体的脏情况（坏文件、GBK、无框线表、全角数字、合并单元格、纯黑曲线……），不是"理论上支持"。</td></tr>
+  <tr><th>不能说明</th><td>你的数据长什么样。<strong>真实项目里的麻烦永远在测试集之外</strong> —— 所以才有那份免费的体检报告，先拿你的文件试。</td></tr>
+  <tr><th>不能说明</th><td>数字的对错。样例数据的数值是我为测试造的，没有物理意义。</td></tr>
+</table>
+</div>
+
+<h2>下一步</h2>
+<div class="panel">
+<p style="line-height:1.95;margin:0 0 10px">
+  想让我处理你的数据：把文件发我，先出一份免费的《数据体检报告》。
+  闲鱼搜「<strong>Excel数据处理 数据提取</strong>」，或搜用户名 <strong>tb40226286</strong>。
+</p>
+<p style="line-height:1.95;margin:0;color:var(--dim);font-size:13.5px">
+  也可以先去 <a href="service.html">服务说明页</a> 看七个能力和报价区间，
+  或者直接用 <a href="index.html">15 个免费在线计算器</a>（不用注册、数据不出浏览器）。
+</p>
+</div>
+
+<h2>其他</h2>
+<div class="panel" style="display:flex;flex-wrap:wrap;gap:12px">
+  <a href="index.html">全部 15 个免费计算器</a>
+  <a href="product.html">Excel 成品（机械设计计算表）</a>
+  <a href="service.html">数据处理服务说明</a>
+</div>
+</main>
+
+<footer>机械工具箱 · 本地计算，不收集任何数据</footer>
+</body>
+</html>
