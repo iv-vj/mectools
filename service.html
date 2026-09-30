@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>工程 / 科研 数据处理服务 · Excel 自动化 · Python 脚本 · 数据提取清洗合并出图 - 机械工具箱</title>
+<meta name="description" content="面向机械、材料、科研场景的数据处理服务：PDF 报表与图片曲线数据提取、公开网页表格采集、不规范数据清洗、多表合并汇总、实验数据批量出图。交付可运行源码 + 使用说明 + 远程陪跑一次 + 3 天内免费修 bug。可先免费出一份数据体检报告再决定。">
+<link rel="canonical" href="https://iv-vj.github.io/mectools/service.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="工程 / 科研 数据处理服务 · 七个脚本一条流水线">
+<meta property="og:description" content="PDF 报表与图片曲线提取、网页表格采集、数据清洗、多表合并、批量出图。交付源码 + 说明 + 远程陪跑。可以先免费体检。">
+<meta property="og:url" content="https://iv-vj.github.io/mectools/service.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"工程 / 科研数据处理服务","url":"https://iv-vj.github.io/mectools/service.html","description":"PDF 报表与图片曲线数据提取、公开网页表格采集、不规范数据清洗、多表合并汇总、实验数据批量出图、机械设计计算校核。交付可运行源码与使用说明，远程陪跑一次，3 天内免费修 bug。","provider":{"@type":"Person","name":"机械工具箱"},"areaServed":"CN","offers":{"@type":"Offer","priceCurrency":"CNY","price":"10","description":"起步价，实际按需求报价"}}</script>
+<link rel="stylesheet" href="style.css">
+<style>
+  .cap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:14px}
+  .cap h3{margin:0 0 4px;font-size:16px}
+  .cap h3 i{display:inline-block;font-style:normal;font-size:12px;font-weight:600;color:#06121d;
+    background:var(--acc);border-radius:5px;padding:1px 7px;margin-right:8px;vertical-align:2px}
+  .cap .lead{color:var(--dim);font-size:13.5px;margin:0 0 12px;line-height:1.85}
+  .cap a.shot{display:block;position:relative}
+  .cap a.shot img{width:100%;border:1px solid var(--line);border-radius:8px;display:block;background:#fff;
+    max-height:400px;object-fit:cover;object-position:top}
+  .cap a.shot:hover img{border-color:var(--acc)}
+  .cap a.shot::after{content:"点开看大图";position:absolute;right:10px;bottom:10px;font-size:11.5px;
+    color:#06121d;background:var(--acc);border-radius:99px;padding:2px 9px;opacity:.92}
+  .cap a.shot:hover::after{text-decoration:none}
+  .beforeafter{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .beforeafter pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;
+    padding:11px 12px;margin:0;font:12px/1.65 var(--mono);color:var(--fg);overflow:auto;max-height:230px}
+  .beforeafter .lab{font-size:12px;color:var(--dim);margin:0 0 5px}
+  .big{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+  .big .txt{flex:1 1 320px;min-width:260px}
+  .big img{flex:1 1 380px;min-width:260px;max-height:420px;object-fit:cover;object-position:top}
+  @media(max-width:640px){.beforeafter{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">机械<span>工具箱</span></div>
+  <nav>
+    <a href="index.html">全部工具</a>
+    <a href="gear.html">齿轮几何</a>
+    <a href="drive.html">传动与轴</a>
+    <a href="product.html">Excel 成品</a>
+    <a href="service.html">代做数据</a>
+  </nav>
+</header>
+
+<main>
+  <h1>工程 / 科研 数据处理</h1>
+  <p class="sub">Excel 自动化 · Python 脚本 · 数据提取 / 清洗 / 合并 / 出图 —— 机械与材料方向，本人接单，做 4 个完整工程项目</p>
+
+  <div class="panel">
+    <p style="margin:0 0 12px;font-size:14.5px;line-height:1.95">
+      试验机导出的 PDF、谱图里的曲线、几十张格式不一的月度表、要统一排版的一批实验数据 ——
+      这些事手工做既慢又容易抄错。我把它们做成了<b>七个脚本，一条流水线</b>。
+    </p>
+    <p style="margin:0;font-size:13.5px;line-height:1.9;color:var(--dim)">
+      每一条都带真值可复现的测试，不是"看着差不多"。
+      下面每个能力配的都是<b>本工具真实跑出来的截图</b>，不是示意图 —— 点开可以看大图。
+    </p>
+  </div>
+
+  <div class="msg ok" style="font-size:14px">
+    <b>不确定要不要花钱？先让我免费做一份《数据体检报告》。</b><br>
+    把你的文件发我（脱敏也行），我先跑一遍告诉你：这份数据干不干净、能不能直接合并、
+    有哪几列需要人工处理、自动化大概能省多少时间。报告给你，不收钱，可以拿去比价。
+    <span style="color:var(--dim)">如果数据量不大、手工做更快，我会直接告诉你不用买脚本。</span>
+  </div>
+
+  <h2>七件事，每一件都有跑通的成品</h2>
+
+  <div class="cap">
+    <h3><i>①</i>PDF 报表数据提取</h3>
+    <p class="lead">试验机、光谱仪、三坐标、环境箱导出的报告全是 PDF，数据只能肉眼抄。
+      按表格几何结构提取，<b>没有框线的表格也能提</b> —— 这一条同行普遍做不到。</p>
+    <a class="shot" href="img/pdf_extract.png" target="_blank" rel="noopener"><img src="img/pdf_extract.png" alt="PDF表格提取：左边是原始无框线 PDF 页，右边是提取结果" loading="lazy"></a>
+  </div>
+
+  <div class="cap">
+    <h3><i>②</i>图片 / 曲线数据提取</h3>
+    <p class="lead">论文插图、仪器截图里的曲线还原成数值，拿去做重新拟合或对比。
+      交付时附一张<b>叠加核对图</b>：把提取到的点画回原图上，准不准你自己一眼验证。</p>
+    <a class="shot" href="img/img_extract.png" target="_blank" rel="noopener"><img src="img/img_extract.png" alt="图片曲线数据提取：原图与叠加核对图并排" loading="lazy"></a>
+  </div>
+
+  <div class="cap">
+    <h3><i>③</i>公开网页表格采集</h3>
+    <p class="lead">把公开页面上的表格抓成 Excel，<b>不需要装 requests，也不需要 BeautifulSoup</b>。
+      合并单元格、两层表头、GBK 编码、一页多表、分页都处理；每一行都带来源网址与表内行号，方便回去核对。</p>
+    <div class="beforeafter">
+      <div>
+        <p class="lab">网页源码里是这样（rowspan 合并的厂区）</p>
+<pre>&lt;tr&gt;&lt;th rowspan="2"&gt;车间&lt;/th&gt;
+  &lt;th colspan="2"&gt;产量&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;一月&lt;/th&gt;&lt;th&gt;二月&lt;/th&gt;&lt;/tr&gt;</pre>
+      </div>
+      <div>
+        <p class="lab">抓出来是这样（父级信息不丢）</p>
+<pre>车间 | 产量_一月 | 产量_二月 | 备注
+一号 |    10     |    20     | 正常
+一号 |    11     |    21     |
+二号 |    30     |    40     | 检修</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="cap">
+    <h3><i>④</i>不规范数据清洗成规范表</h3>
+    <p class="lead">全角数字、<code>¥1,234.00</code>、<code>5 件</code>、<code>1.2万</code>、
+      五种日期写法、八种"是/否"写法、前后空白、空行空列、完全重复行、列名 `Unnamed: 7` —— 一次性统一掉，
+      并给出一份<b>逐列说明改了什么</b>的清洗报告。</p>
+    <a class="shot" href="img/clean_result.png" target="_blank" rel="noopener"><img src="img/clean_result.png" alt="数据清洗：清洗报告逐列说明处理了什么、影响多少行" loading="lazy"></a>
+  </div>
+
+  <div class="cap">
+    <h3><i>⑤</i>多张表按编号合并汇总</h3>
+    <p class="lead">表头不一样、列顺序不同、有坏文件、有子文件夹也能拼成一张总表。
+      不带参数时会<b>自动推断分组列</b>，并给出一份《读取报告》说明哪些文件跳过、为什么跳过。</p>
+    <a class="shot" href="img/merge_result.png" target="_blank" rel="noopener"><img src="img/merge_result.png" alt="多表合并汇总：汇总表、明细表、读取报告三张表" loading="lazy"></a>
+  </div>
+
+  <div class="cap">
+    <h3><i>⑥</i>实验数据批量出图</h3>
+    <p class="lead">一组数据出十几张图还要统一格式，是最耗人的活。一次批量出
+      <b>SVG（矢量，直接进论文）+ PNG</b>，可带误差棒、线性拟合与 R²，
+      同时生成一份带原生 Excel 图表的 `图表.xlsx` 和一个能翻看的图库页。
+      <span style="color:var(--dim)">不需要 matplotlib。</span></p>
+    <a class="shot" href="img/plot_batch.png" target="_blank" rel="noopener"><img src="img/plot_batch.png" alt="实验数据批量出图：带误差棒与线性拟合的 PNG/SVG 图（真实输出）" loading="lazy"></a>
+  </div>
+
+  <div class="cap">
+    <h3><i>⑦</i>机械设计计算与校核</h3>
+    <p class="lead">齿轮几何与强度（GB/T 3480）、轴弯扭合成、滚动轴承寿命、平键联接、
+      公差配合（GB/T 1800.3）、梁的弯曲挠度。本站 15 个计算器可以<b>先免费试</b>，
+      要能离线、能自己改公式的版本是那份 Excel 成品。</p>
+    <a class="shot" href="img/product_live.png" target="_blank" rel="noopener"><img src="img/product_live.png" alt="机械设计计算表 Excel 版：九张表" loading="lazy"></a>
+  </div>
+
+  <h2>你付钱之后拿到的是这些</h2>
+  <div class="panel">
+    <p style="margin:0;font-size:14px;line-height:2.1">
+      <b>① 可运行的 Python 源码</b> —— 不是截图、不是加密脚本。文件名、参数、注释都写清楚，你或你同事以后能自己改。<br>
+      <b>② 一份《使用说明》</b> —— 怎么装、怎么跑、每个参数什么意思、输出是什么、<b>已知不能做什么</b>。中文，按你的实际数据写。<br>
+      <b>③ 远程指导一次</b> —— 环境装不上、参数不会填，我陪你跑通为止。远程或截图都行。<br>
+      <b>④ 3 天内免费修 bug</b> —— 同一份数据在我这儿跑出来的结果和你的不一致，算我的问题，我改。
+    </p>
+  </div>
+
+  <h2>先免费试，不用先跟我聊</h2>
+  <div class="cap">
+    <p class="lead">本站 15 个计算器<b>完全免费、免注册、数据不出浏览器</b>。
+      你可以先拿去用，用它判断我做的东西靠不靠谱 —— 用完了再决定要不要找我干活。</p>
+    <a class="shot" href="img/live_index.png" target="_blank" rel="noopener"><img src="img/live_index.png" alt="机械工具箱首页：15 个免费在线计算器" loading="lazy"></a>
+  </div>
+
+  <h2>报价区间</h2>
+  <div class="panel">
+    <table>
+      <tr><th style="width:34%">类型</th><th>参考价（元）</th><th>典型需求</th></tr>
+      <tr><td>简单单文件处理</td><td class="v">20 ~ 50</td><td>一次清洗、一次合并、出一组图</td></tr>
+      <tr><td>中等（多文件 / 多步骤）</td><td class="v">80 ~ 200</td><td>PDF 批量提取 + 清洗 + 汇总</td></tr>
+      <tr><td>复杂（要定制逻辑）</td><td class="v">300 ~ 800</td><td>要跑通你单位的固定报表流程</td></tr>
+      <tr><td>只配环境 / 远程排错</td><td class="v">20 ~ 40</td><td>Anaconda、PyCharm、依赖装不上</td></tr>
+    </table>
+    <p style="margin:12px 0 0;font-size:13px;line-height:1.9;color:var(--dim)">
+      报了价再开工，中途不加价。先聊需求、带上样例文件，我评估后给报价和工期。
+    </p>
+  </div>
+
+  <h2>先说清楚，这些我不接</h2>
+  <div class="panel">
+    <p style="margin:0;font-size:13.5px;line-height:2;color:var(--dim)">
+      · 毕业设计 / 课程设计代做（学术造假，一律不接）<br>
+      · 需要爬取隐私数据、破解类需求<br>
+      · 需要我提供身份资质证明的<br>
+      · 要登录、有验证码、纯 JS 动态渲染的网站 —— 抓不了，我会直接说抓不了<br>
+      · 面向的站点 robots.txt 明确禁止抓取的，默认不会去抓（你可以让我加参数强制，但请自行确认你有权采集）<br>
+      · 不做图像增强、不做 OCR 识别扫描件文字（扫描件请先自己做 OCR，我不猜图片内容）
+    </p>
+  </div>
+
+  <h2>怎么找到我</h2>
+  <div class="panel">
+    <p style="margin:0 0 10px;font-size:14px;line-height:1.95">
+      在<b>闲鱼 App</b> 里搜 <b>「Excel数据处理 数据提取」</b>，或搜用户名 <b>tb40226286</b>。
+      拍下前先聊需求都行。
+    </p>
+    <p style="margin:0;font-size:13.5px;line-height:1.9;color:var(--dim)">
+      另外这里有一点需要说明：数据处理的活儿大多是<b>本地跑</b>的，你的文件我不会外传，
+      也不上传到任何服务器。需要联网的只有"公开网页表格采集"这一项。
+    </p>
+  </div>
+
+  <h2>其他</h2>
+  <div class="panel" style="display:flex;flex-wrap:wrap;gap:10px">
+    <a class="card" href="index.html" style="flex:1 1 210px"><b>全部 15 个计算器</b><small>免费在线，浏览器本地计算，不用注册</small><span class="tag">免费</span></a>
+    <a class="card" href="product.html" style="flex:1 1 210px"><b>机械设计计算表 Excel 版</b><small>9 张活公式表，离线可用，¥2.9</small><span class="tag">成品</span></a>
+    <a class="card" href="t-tol.html" style="flex:1 1 210px"><b>极限与配合计算</b><small>GB/T 1800.3 公差表内置</small><span class="tag">可用</span></a>
+  </div>
+</main>
+
+<footer>
+  机械工具箱 · 15 个工具 · 本地计算，不收集任何数据
+</footer>
+</body>
+</html>
