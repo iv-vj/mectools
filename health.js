@@ -472,12 +472,28 @@
     L.push('## 【结论】');
     const rp = r.problems.length + human.length;
     L.push(`一共发现 ${rp} 处需要处理的地方，其中文件层的 ${r.problems.length} 处、列内容层的 ${human.length} 处。`);
+    L.push('');
+    // 手工 vs 脚本的粗估。故意用"每次重来一遍"的口径 —— 一次性整理完就完事的数据，
+    // 脚本本来就不划算，这也写在下面那句里。
+    const manualMin = Math.round(r.totalRows * 0.15 + rp * 6);
+    const fmtMin = m => m >= 60 ? `${(m / 60).toFixed(1)} 小时` : `${m} 分钟`;
+    L.push(`**手工做一次的粗估：${fmtMin(manualMin)} 左右**（${r.totalRows} 行，按每行 9 秒、每处问题另加 6 分钟算）。`);
+    L.push(`脚本搭好之后，同样这份数据每次重跑大约 ${Math.max(1, Math.round(manualMin / 60))} 分钟 —— 省下来的全部是「每次都要重来一遍」的那部分。`);
+    L.push('所以：**只做一次、以后不再有的数据，手工更快，别花钱。**');
     if (r.totalRows <= 30 && r.sheets.length <= 2 && rp <= 2) {
       L.push('');
       L.push('**建议：诚实说 —— 这点数据量手工做更快。我可以直接告诉你怎么做，不用买脚本。**');
     } else {
       L.push('');
-      L.push('按上面的情况，写脚本能省下的是「每次都要重来一遍」的那部分。把这份报告连着原始文件发给我，我给你一个明确的报价和工期。');
+      const band = (r.totalRows <= 200 && rp <= 3) ? '简单（20~50 元）'
+        : (r.totalRows <= 5000 && rp <= 10) ? '中等（80~200 元）'
+        : '复杂（300~800 元）';
+      L.push(`按上面这份的规模与脏乱程度，粗略落在 **${band}** 这一档（真实报价看你具体要什么，这份只是参考）。`);
+      L.push('');
+      L.push('## 【下一步】');
+      L.push('- 把这份报告连着原始文件（脱敏也行）发我，我按它给明确报价和工期。');
+      L.push('- 闲鱼搜「数据处理 数据提取」，或搜用户名 **tb40226286**。');
+      L.push('- 想知道我到底做没做过、做成什么样：https://iv-vj.github.io/mectools/sample.html');
     }
     return L.join('\n');
   }
